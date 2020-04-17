@@ -11,7 +11,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Analysis on the usage of Topic Model with Background Knowledge inside Specific-themed Discussion Activiy}
+\title{Analysis on the usage of Topic Model with Background Knowledge inside Specific-themed Discussion Activity}
 
 \author{\IEEEauthorblockN{Muhammad Luthfi\IEEEauthorrefmark{1}, Satoshi Goto\IEEEauthorrefmark{2}, Osamu Yoshie\IEEEauthorrefmark{3}}
 \IEEEauthorblockA{\textit{Graduate School of Information, Production, and Systems} \\
@@ -23,7 +23,7 @@ Kitakyushu, Japan \\
 \maketitle
 
 \begin{abstract}
-Kontol Kontol Kontol Kontol Kontol Kontol.
+Memek memek memek.
 This document is a model and instructions for \LaTeX.
 This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
 or Math in Paper Title or Abstract.
@@ -34,16 +34,52 @@ component, formatting, style, styling, insert
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+A conventional discussion activity happened when a group of people let out their own opinion with appropriate feedbacks from the other. In industries, discussions are being held in various departments to solve specific problems. We can characterize such discussions as a group of people who shares a same interest aimed to build one single consensus. Furthermore, consensus building is important because it can resolves dispute more effectively by involving people from various levels and departments in an organization\cite{b1}. Nowadays, most companies are using consensus building approach on the requirement decision part of their products, hence making such activities as a specific-themed discussion activity.
+
+The practice of consensus building often times still having frequent problems. During discussion activities, various stakeholders who has different personalities and backgrounds are present. This diversity would influence final conclusion\cite{b2} and affects their tendency and direction of the discussion ((GOTO, 2019)).
+ 
+Couple of methods can be implemented inside discussion activity to improve consensus quality e.g. recording, facilitation, and mediation\cite{b1}. Recording in this term stands for creating a physical record of what subject being discussed. Recording can be implemented by actually recording the whole discussion as a video file or even as simple as taking notes on participant's utterance. Facilitation in a second hand, used to help participants work together by providing an artifact containing the discussion progress which everyone agrees on. Finally, mediation acts to help opposite parties deal with disagreement. One independent participant is needed to resolve disputes with his/her objective point of view.
+
+Few researches has been conducted to improve consensus quality. One initiative takes form by performing recording act on non-verbal aspects of the discussion ((KATAGIRI 2008)). In industrial engineering perspective, another initiative has been proposed as a new framework of short term and intensive workshop facilitation for multi-party stakeholders in Product Lifecycle Management (PLM) strategy  planning phase \cite{b4}. Both initatives tried to improve the overall discussion activity process while each of it has their own problems. The first initiatives is hard to interpret for general participants because the result takes form as raw Proposal Unit (PUs) while the second one is heavily relied on one external facilitator which might produce biased judgment.
+
+\section{Research Problem}
+In this paper, we tried to resolve the disadvantages found in previous researches. We tried to propose a method that is easy to interpret for general participants and external facilitator. We also tried to produce an objective result to support external facilitator's feedback. Basically, we conducted a digitized approach by analysing dialog data from discussion sessions and analyze it using topic model and background knowledge. We compile the result and validate it on a Japanese company and one external facilitator. The feedbacks we retrieve will be a valuable asset to continue develop this approach. However, a preliminary study regarding this matter has been conducted ((GOTO 2019)) and this research act as the extension of it with approval from the original author.
 
 \section{Proposed Method}
+In this research, we performed digitized approach of dialog data from discussion activity sessions using data augmentation, topic model with background knowledge, and distribution similarity. First, the data will be prepared by simple preprocess and data augmentation. The clean and augmented data will then be experimented by various topic models and hyperparamaters, we picked the best configuration and incorporate it into background-knowledge-backed topic model to generate topic distributions. Finally, we will calculate the distribution similarity by multiple factors and implement it to actual use.
+
+\subsection{Data Augmentation}
+We took a real life dialog data from discussion sessions which happened for 1-2 hour long. Based on the dataset characteristics in ((TABLE)), the dataset we used is very poor. Thus, we are using data augmentation techniques to improve dataset quality. We expand the Easy Data Augmentation ((WEI 2019)) by adding additional processes e.g. hypernym replacement and hyponym replacement. Hypernym and hyponym of a word is crucial as we thought the topic mixture of a sentence s should be the same with other sentence s' who has hypernym/hyponym relation with some words inside it.
+
+\subsection{Topic Model with Background Knowledge}
+We tried to mine latent opinion of participants using topic  model with background knowledge. Topic model is an unsupervised learning approach where we could transform documents into document-to-topic distributions and topic-to-word distributions. In topic model point of view, document is a mixture of topic where topic itself is a mixture of word. 
+
+The most popular proposal method of topic model is Latent Dirichlet Allocation (LDA) ((BLEI 2003)), which mostly, the current available topic model is proposed based on that. In LDA-based topic model, the learning process consists of generative process and sampling process. In generative process, the initial document-to-topic distributions and topic-to-word distributions are generated using hyperparameter $\alpha$ and $\beta$. While in the sampling process, distributions are evaluated by iterating each word and recalculate the distribution using Gibbs Sampling ((GIBBS REFERENCE)). The graphical notation of LDA topic model is shown in ((FIGURE)), while the algorithm is shown in ((FIGURE)).
+
+In our approach, we realize that our dataset has relatively smaller size compared to common topic model researches. Hence, we compiled various topic models with speciality in short text as suggested by ((QIANG 2019)). The whole list of topic models could be seen in ((TABLE)).
+
+After the experiment is done we can decide what is the best topic model, hyperparameters, and the number of sentence augmentation processes to use. After that, we will incorporate the result to a new backround-knowledge-backed topic model named Source-LDA ((WOOD 2016)) as the most suitable topic model for our case. In Source-LDA, we could provide backround knowledge data and it will help us improve the topic quality by encouraging the topic label automatically.
+
+\subsection{Distribution Similarity}
+In this step, we aimed to symbolize the topic disribution into a single value that describes the rate of consensus built. In order to do this, we used distribution similarity calculation using Jensen-Shannon Divergence across all distributions ((submitted1.pdf)). And then the final deliverables of this research will be the final topic distribution with its agreement rate.
 
 \section{Experiment}
+Dialog data from requirement decision discussion sessions of 4 Japanese companies was succesfully retrieved. Data preprocessing and sentence augmentation is done to clean the data. The comparison of dataset characteristics before and after data modification is shown in ((FIGURE)). Furthermore, the property for each sentence in dataset presentend in ((TABLE)).
+
+Following the data preprocessing step, topic model experiment is conducted on all topic models in ((FIGURE)) with additional experiment on LDA. The hyperparameter and topic evaluation used is based on ((QIANG 2019)) which we used topic coherence since our dataset is raw and no labelling has been done for the dataset. The result of topic model experiment is shown in ((FIGURE)), while the actual effect of sentence augmentation process towards topic coherence value is shown in ((FIGURE)).
+
+From the result, we can conclude that xx sentence augmentation processes gives the best and most consistent result compared to others.  Finally, we picked xx topic model with xx hyperparameter and xx sentence augmentation processes as the best configuration. 
+
+The next step is to incorporate this configuration into  Source-LDA. The utilized dataset was taken from discussion sessions which are part of Product Lifecycle Management (PLM) practices ((PLM REFERENCE)). Hence, PLM topics is used as the background knowledge data. The best choice for this is PTC Value Roadmap ((PTC REFERENCE)) because it contains a whole 26 PLM Topics with the definitions of each. THe characteristics of this dataset is shown in ((TABLE)). ((FIGURE)) shows the value of topic coherence relative to the number of sentence augmentation process applied to background knowledge dataset.
+
+As the final configuration, xx sentence augmentation processes for background knowledge is applied. Since topic distribution has finally obtained. JS Divergence is used to measure the similiarity between topic distributions. The similarity of each discussion sessions can be seen at ((TABLE)). 
 
 \section{Case Study}
 
 \section{Results and Discussion}
+In this section, the actual result and qualitative evaluation will be presented. ((TABLE)) dst shows the average topic distribution values clustered by various supporting informations.
+
+After we conducted another discussion session with the same set of participants and external facilitator. We retrieved feedbacks as shown in ((FIGURE)). Overall, the participants and external facilitator feels that the usage of topic model with background knowledge in specific-themed discussion activy environment give moderate impact xxx xxx xxx. 
 
 \section{Conclusion and Future Works}
 
@@ -250,10 +286,10 @@ For papers published in translation journals, please give the English
 citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
+\bibitem{b1} J. Thomas-Lamar, S. Mckearnan, and L. Susskind, ``The Consensus Building Handbook: A Comprehensive Guide to Reaching Agreement,'' SAGE Publications, 1999. pp.7--9.
+\bibitem{b2} N. He, S. Yao, and O.Yoshie, ``Emotional speech classification in consensus building,'' {\it 2014 10th International Conference on Communications (COMM)}, Bucharest, 2014, pp. 1-4.
+\bibitem{b3} K. Elissa, ``Title of paper if known,'' unpublished.
+\bibitem{b4} S. Goto, O. Yoshie, and S. Fujimura, ``Empirical study of multi-party workshop facilitation in strategy planning phase for Product Lifecycle Management (PLM) system,'' {\it 2019 IFIP International Conference on Product Lifecycle Management}, Moscow, 2019, pp. 82-93.
 \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
 \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
 \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.

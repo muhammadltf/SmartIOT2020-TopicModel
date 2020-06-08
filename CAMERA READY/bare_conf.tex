@@ -1,0 +1,919 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[10pt, conference, compsocconf]{IEEEtran}
+% Add the compsocconf option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{multirow}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  \graphicspath{{../}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  \graphicspath{{../}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb,amsfonts}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+\usepackage{algorithmic}
+\usepackage{algorithm}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage{subfig}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+\usepackage[labelsep=period]{caption}
+\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{1.5pt plus 1ex}
+}
+
+%\newcommand{\subparagraph}{}
+%\usepackage{titlesec}
+%\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Analysis on the Usage of Topic Model with Background Knowledge \\inside Discussion Activity in Industrial Engineering Context}
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+%\author{\IEEEauthorblockN{Muhammad Luthfi}
+%\IEEEauthorblockA{Graduate School of Information, Production, and %Systems\\
+%Waseda University\\
+%Kitakyushu, Japan\\
+%muhammad.luthfi@akane.waseda.jp}
+%\and
+%\IEEEauthorblockN{Satoshi Goto}
+%\IEEEauthorblockA{Graduate School of Information, Production, and %Systems\\
+%Waseda University\\
+%Kitakyushu, Japan\\
+%satoshi.goto@fuji.waseda.jp}
+%\and
+%\IEEEauthorblockN{Osamu Yoshie}
+%\IEEEauthorblockA{Graduate School of Information, Production, and %Systems\\
+%Waseda University\\
+%Kitakyushu, Japan\\
+%yoshie@waseda.jp}
+%}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+\author{\IEEEauthorblockN{Muhammad Luthfi\IEEEauthorrefmark{1},
+Satoshi Goto\IEEEauthorrefmark{2} and
+Osamu Yoshie\IEEEauthorrefmark{3}}
+\IEEEauthorblockA{Graduate School of Information, Production, and Systems\\
+Waseda University,
+Kitakyushu, Japan 808-0135\\\IEEEauthorrefmark{1}muhammad.luthfi@akane.waseda.jp, \IEEEauthorrefmark{2}satoshi.goto@fuji.waseda.jp, \IEEEauthorrefmark{3}yoshie@waseda.jp}
+}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+A better method to improve discussion activity is being actively investigated. To improve the consensus built inside discussion activity, some approaches has been proposed and we aimed to explore this possibility further. Previous proposals includes detecting non-verbal aspect to implicitly filter main ideas and proposing a new framework of short-term intensive workshop facilitated by a professional consultant in Product Lifecycle Management (PLM) process. In this paper, our goal is to analyse a digitized approach by performing topic modeling with the help of background knowledge on discussion activity held within industrial engineering context. We validate our findings to a professional consultant and conclude that our approach gives an adequate contribution  towards summarizing discussion activity in which, might improve consensus building process.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+topic model; background knowledge; consensus building; product lifecycle management; data augmentation
+
+\end{IEEEkeywords}
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% no \IEEEPARstart
+A conventional discussion activity happened when a group of people let out their own opinion with appropriate feedbacks from the other. In industries, discussions are being held in various departments to solve specific problems. We can characterize such discussions as a group of people who shares a same interest aimed to build one single consensus. Furthermore, consensus building is important because it can resolves dispute more effectively by involving people from various levels and departments in an organization\cite{b1}. Nowadays, most companies are using consensus building approach on the requirement decision part of their products, hence making such activities as a specific-themed discussion activity. The practice of consensus building often times still have frequent problems. During discussion activities, various stakeholders with different personalities and backgrounds are present might influence final conclusion\cite{b2} which will affect tendency and direction of the discussion\cite{b3}.
+ 
+Couple of methods can be implemented inside discussion activity to improve consensus quality such as recording, facilitation, and mediation\cite{b1}. Recording in this term stands for creating a physical record of what subject being discussed. Recording can be implemented by actually recording the whole discussion as a video file or even as simple as taking notes on participant's utterance. Facilitation in a second hand, help participants work together by providing artifact containing the discussion progress which everyone agrees on. Finally, mediation acts to help opposite parties deal with disagreement. In order to perform mediation, one independent person is needed to resolve disputes with his/her objective point of view.
+
+Some researches has been conducted to improve consensus quality. One initiative takes form by performing implicit proposal (potential ideas) filtering utilizing non-verbal aspects of the discussion\cite{b5}. In digital transformation for smart, connected engineering field, another initiative has been proposed as a new framework of short term and intensive workshop facilitation for multi-party stakeholders in Product Lifecycle Management (PLM) strategy  planning phase \cite{b4}. Both initiatives tried to improve the overall discussion activity process while each of it has their own problems. The first initiative is not quite reliable since it depends heavily on participant's small gesture during discussion while the second one is heavily relied on one external professional consultant which might possibly produce biased judgment.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+%\section{Type style and Fonts}
+%Wherever Times is specified, Times Roman or Times New Roman may be used. If neither is available on your system, please use the font closest in appearance to Times. Avoid using bit-mapped fonts if possible. True-Type 1 or Open Type fonts are preferred. Please embed symbol fonts, as well, for math, etc.
+
+\section{Research Problem}
+\label{sec_rp}
+In this paper, we tried to resolve the disadvantages found in previous researches. We tried to propose a method to improve consensus quality that is reliable enough while also helping professional consultant against producing biased judgment. In simple terms, we conducted a digitized approach by analysing dialog data from discussion sessions and analyze it using topic model and background knowledge. We are utilizing dialog data from PLM-themed discussion activity to detect hidden pattern and latent opinion from participants. Then, we will validate our findings with a professional consultant to discover the method's effectiveness. However, a preliminary study regarding this matter has been conducted\cite{b3} and this research act as the extension of it with approval from the original author.
+
+\section{Proposed Method}
+In this research, we performed a digitized approach of dialog data from PLM-themed discussion activity sessions using data augmentation, topic model with background knowledge, and distribution similarity. First, the data will be prepared by a simple preprocess method and data augmentation. The clean and augmented data will then be experimented by various topic models and hyperparameters, we picked the best configuration and incorporate it into background-knowledge-backed topic model to generate topic distributions. Then, we will calculate the distribution similarity as convergence rate. Finally, a professional consultant will analyse the results to get an objective review. To summarize, we will take dialog data of discussion session and transform it into topic distributions, similarity value, and most frequent words (if necessary) from each discussion session to be validated by a professional consultant.
+
+\subsection{Data Augmentation}
+We took a real life dialog data from discussion sessions which ran for 1-2 hour long. Based on the dataset characteristics in Table~\ref{table 1: dataset characteristics}, the dataset we used is very poor. Thus, we are using data augmentation techniques to improve dataset quality. We expand the Easy Data Augmentation\cite{b7} by adding additional processes: hypernym replacement and hyponym replacement. Hypernym and hyponym of a word is crucial as we thought the topic mixture of a sentence {\it s} should be the same with other sentence {\it s'} who has hypernym/hyponym relation with some words inside it.
+
+\subsection{Topic Model with Background Knowledge}
+We tried to mine latent opinion of the dataset  using topic  model with background knowledge. Topic model is an unsupervised learning approach where we could transform documents into document-to-topic distributions and topic-to-word distributions. In topic model point of view, document is a mixture of topic where topic itself is a mixture of word. The most popular method of topic model is Latent Dirichlet Allocation (LDA)\cite{b8}, in which, most currently available topic model is proposed based on that. In LDA-based topic model, the learning process consists of generation process and sampling process. In generative process, the initial document-to-topic distributions and topic-to-word distributions are generated using hyperparameter $\alpha$ and $\beta$. Then, in the sampling process, distributions are evaluated by recalculating it using Gibbs Sampling for each and every word. The graphical notation of LDA topic model is shown in Fig.~\ref{fig_lda}, while the generation algorithm is:
+\bigskip
+
+\begin{algorithmic}[1]
+\STATE For each topic {\it k} in {\it K}:
+\begin{ALC@g} 
+\STATE Generate $\phi_k$ \texttildelow{} Dir($\beta$) 
+\end{ALC@g}
+\STATE For each document {\it d} in {\it D}:
+\begin{ALC@g} 
+\STATE Generate $\theta_d$ \texttildelow{} Dir($\alpha$) 
+\end{ALC@g}
+\STATE For each position {\it i} of document {\it d} in {\it D}:
+\begin{ALC@g} 
+\STATE Generate $z_{id}$ \texttildelow{} Multinomial($\theta_d$)
+\STATE Generate $w_{id}$ \texttildelow{} Multinomial($\phi_{z_{id}}$)
+\end{ALC@g}
+\end{algorithmic}
+\bigskip
+
+\begin{table}[h]
+\caption{Dataset Characteristics}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Measures Type}&\textbf{PLM Workshop Dataset}&\textbf{Common Dataset \cite{b6}}\\
+\hline
+Total Documents&383&11094  \\
+\hline
+Corpus Size&686&4887 \\
+\hline
+Average Length&4.83&7.84 \\
+\hline
+\end{tabular}
+\label{table 1: dataset characteristics}
+\end{table}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5]{lda.png}
+	\caption{LDA plate notation}
+\label{fig_lda}
+\end{figure}
+
+\noindent where {\it K} is set of topics, {\it D} is set of documents, $\phi_k$ is topic-to-word distribution for topic {\it k}, $\theta_d$ is document-to-topic distribution for document {\it d}, $z_{id}$ is topic for the $i_{th}$ word in document {\it d}, and $w_{id}$ is the $i_{th}$ word in document {\it d}.
+
+In our approach, we realize that our dataset has relatively smaller size compared to common topic model researches. Hence, we assembled various topic models with speciality in short text as suggested by\cite{b6}. The whole list of topic models could be seen in Table~\ref{table 2: topic model experiment}.
+
+\begin{table}[b]
+\caption{Topic Model Experiment}
+\resizebox{0.5\textwidth}{!}{\begin{tabular}{|c|c|c|}
+\hline
+\textbf{No.}&\textbf{Topic Model}&\textbf{Type}\\
+\hline
+1&LDA\cite{b8}&Standard  \\
+\hline
+2&Dirichlet Multinomial Mixture (DMM)\cite{b11}&\multirow{5}{*}{\shortstack{One-topic \\sampling based}} \\
+3&Latent-Feature LDA (LFLDA)\cite{b12}& \\
+4&Latent-Feature DMM (LFDMM)\cite{b12}& \\
+5&Generalized Polya Urn DMM (GPU-DMM)\cite{b13}& \\
+6&GPU Poisson-based DMM (GPU-PDMM)\cite{b14}& \\
+\hline
+7&Biterm Topic Model (BTM)\cite{b15}&\multirow{2}{*}{\shortstack{Global word \\co-occurence based}} \\
+8&Word Network Topic Model (WNTM)\cite{b16}& \\
+\hline
+9&Self-aggregate Topic Model (SATM)\cite{b17}&\multirow{2}{*}{\shortstack{Self-aggregation \\based}}\\
+10&Pseudo-based Topic Model (PTM)\cite{b18}& \\
+\hline
+\end{tabular}}
+\label{table 2: topic model experiment}
+\end{table}
+
+After the experiment is done we will decide what is the best topic model, hyperparameters, and the number of sentence augmentation processes to use. After that, we will incorporate the result to a new background-knowledge-backed topic model called Source-LDA\cite{b9} as the most suitable topic model for our case. In Source-LDA, we are able to provide background knowledge data to influence topic labeling thus improving topic quality in the process.
+
+\subsection{Distribution Similarity}
+In this step, we aimed to picture the topic distribution into a single value that describes the rate of consensus built (agreement rate). In order to do this, we used distribution similarity calculation using Jensen-Shannon Divergence across all distributions\cite{b10}. This concludes the final step of our proposed method.
+
+\section{Experiment}
+We had an opportunity to utilize dialog data from requirement decisions (discussion session) of 4 Japanese companies. Data preprocessing and sentence augmentation is done to clean the data. The comparison of dataset characteristics before and after augmentation is shown in Table~\ref{table 3: augmented dataset characteristics}. Furthermore, the property for each sentence in dataset is presented in Table~\ref{table 4: dataset property}.
+
+Following the data preprocessing step, topic model experiment is conducted on all topic models in Table~\ref{table 2: topic model experiment}. We used {\it topic coherence} to evaluate topic model performance as our dataset is raw and golden label for each sentence is not present\cite{b6}. The result of topic model experiment is shown in Fig.~\ref{fig_tme} by averaging topic coherence value across various hyperparameters for each sentence augmentation processes. Most of the time, the usage of sentence augmentation process will improve topic coherence value.
+
+From the result, we can conclude that 1 sentence augmentation processes gives the best and most consistent result compared to others.  Finally, we picked LDA topic model with $\alpha$ 0.15, $\beta$ 0.01, and 1 sentence augmentation process as the best configuration.
+
+The next step is to incorporate this configuration into  Source-LDA. Based on our research problem from Section~\ref{sec_rp}, PLM topics is used as the background knowledge data. We decided to use PTC Value Roadmap\footnote{\url{http://support.ptc.com/WCMS/files/28837/en/J1051_ValueRoadmap_TS.pdf}} because it contains 26 PLM Topics with complete definitions for each topics. The background knowledge dataset held a relative big size consisting of 26 topics, 1068 unique words, and 145.88 average document length. Fig.~\ref{fig_tme2} shows the topic coherence value relative to the number of sentence augmentation process applied to background knowledge dataset.
+
+Based on the result, we can conclude that the more we applied sentence augmentation on background knowledge, the better topic quality will be. In this experiment, the usage of background knowledge also improves the topic coherence value from 1.307 (LDA without background knowledge) to 1.311 (LDA with background knowledge).
+
+\begin{table}[b]
+\caption{Augmented Dataset Characteristics}
+\resizebox{0.475\textwidth}{!}{\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Augmentation}&\textbf{Total Documents}&\textbf{Corpus Size}&\textbf{Average Length}\\
+\hline
+\begin{minipage}{0.1\textwidth}\center {\shortstack{No\\Augmentation}}\end{minipage}&383&686&4.83  \\
+\hline
+\begin{minipage}{0.1\textwidth}\center {\shortstack{1 Sentence \\Augmentation}}\end{minipage}&1017&922&5.00 \\
+\hline
+\begin{minipage}{0.1\textwidth}\center {\shortstack{9 Sentence \\Augmentation}}\end{minipage}&5085&1519&5.10 \\
+\hline
+\begin{minipage}{0.1\textwidth}\center {\shortstack{12 Sentence \\Augmentation}}\end{minipage}&6643&1681&5.10 \\
+\hline
+\end{tabular}}
+\label{table 3: augmented dataset characteristics}
+\end{table}
+
+\begin{table}[b]
+\caption{Dataset Property}
+\resizebox{0.475\textwidth}{!}{\begin{tabular}{|c|c|}
+\hline
+\textbf{Property Name}&\textbf{Possible value}\\
+\hline
+Company ID&\{1,2,3,4\}  \\
+\hline
+Question Type&\{Problem, Solution\} \\
+\hline
+\begin{minipage}[b]{0.1\textwidth}\center Response Category\end{minipage}&{\shortstack{\{Information Technology, Corporate Management,\\Business Process, Human Development\}}} \\
+\hline
+Organization Level&\{very low, low, medium, high, very high\} \\
+\hline
+Opinion&\{short sentence consists around 5 words\} \\
+\hline
+\end{tabular}}
+\label{table 4: dataset property}
+\end{table}
+
+\begin{figure}[b]
+	\includegraphics[scale=0.425]{topic1.png}
+	\caption{Topic coherence value based on topic model and sentence augmentation process performed on Dialog Data}
+\label{fig_tme}
+\end{figure}
+
+\begin{figure}[t]
+	\includegraphics[scale=0.425]{topic2.png}
+	\caption{Topic coherence value based on background knowledge (BK) augmentation process}
+\label{fig_tme2}
+\end{figure}
+
+\section{Results and Discussion}
+In this section, the qualitative evaluation of the result will be presented. The average topic distribution from each company is shown in Fig.~\ref{fig_c}. In order to simplify the result, Table~\ref{table 5: mapping plm} shows the mapping value for each PLM topics. To simplify experiment process, the order of topic number is in alphabetical order and different with what shown in the reference i.e. PTC Value Roadmap. 
+
+Topic distribution has finally obtained so we can proceed with similarity measurement using JS Divergence. All value approaching to 0 means that there is no variation between probability distributions, meanwhile value approaching to 1 means that there is high variation between probability distributions. The similarity of each discussion sessions can be seen at Table~\ref{table 6: similarity} along with the top frequent words. 
+
+\begin{figure*}[t]
+	\subfloat[Topic distributions for company 1]{\label{fig_c1}\includegraphics[scale=0.425]{company1.png}}
+	\subfloat[Topic distributions for company 2]{\label{fig_c2}\includegraphics[scale=0.425]{company2.png}}\\
+	\subfloat[Topic distributions for company 3]{\label{fig_c3}\includegraphics[scale=0.425]{company3.png}}
+	\subfloat[Topic distributions for company 4]{\label{fig_c4}\includegraphics[scale=0.425]{company4.png}}
+\caption{Average topic distributions of all company}
+\label{fig_c}
+\end{figure*}
+
+Given the results, here is the feedback from professional consultant for each discussion session:
+
+\subsubsection{Company 1}
+{\it Company 1 had a key problem in terms of information exchange between design and manufacturing. I agree that the frequency of Design and Manufacturing topics was high. However, the topic of Project Management was rarely spoken directly by their voices. In addition, the analysis results show that there are few topics on Manufacturing Process Management. Certainly, there were few remarks on Manufacturing Process Management when the workshop was actually held. However, one of the participants was very concerned about the topic and he is one of the important people in the PLM project, so even if it is a minority opinions, I cannot ignore it as my consultant perspective. By the way, in the analysis results, the words with the highest frequency of occurrence were Information, Product, and Data. These were key words that participants often talked about during the actual workshop. As a consultant, I agree with that.}
+
+\begin{table}[t]
+\caption{Mapping of PLM Topics}
+\resizebox{0.425\textwidth}{!}{\begin{tabular}{|c|c|}
+\hline
+\textbf{Mapping Value}&\textbf{PLM Topics}\\
+\hline
+Topic 0&Business System Support  \\
+\hline
+Topic 1&Change and Configuration Management \\
+\hline
+Topic 2&Component and Supplier Management \\
+\hline
+Topic 3&Concept Development \\
+\hline
+Topic 4&Design and Manufacturing Outsourcing \\
+\hline
+Topic 5&Equipment Monitoring and Lifecycle Management \\
+\hline
+Topic 6&Manufacturing Process Management \\
+\hline
+Topic 7&Mechanical, Electrical, and Software Development \\
+\hline
+Topic 8&Performance Analysis and Feedback \\
+\hline
+Topic 9&Platform Design and Variant Generation \\
+\hline
+Topic 10&Product Cost Management \\
+\hline
+Topic 11&Product Support Analysis and Planning \\
+\hline
+Topic 12&Project Management \\
+\hline
+Topic 13&Quality and Reliability Management \\
+\hline
+Topic 14&Regulatory and Materials Compliance \\
+\hline
+Topic 15&Requirements Definition and Management \\
+\hline
+Topic 16&Service Diagnostics and Knowledge Management \\
+\hline
+Topic 17&Service Logistics and Network Management \\
+\hline
+Topic 18&Service Order Management and Field Service \\
+\hline
+Topic 19&Service Parts Planning and Pricing \\
+\hline
+Topic 20&Smart, Connected Product Enablement \\
+\hline
+Topic 21&System Architecture Design \\
+\hline
+Topic 22&Technical and Service Parts Information Creation and Delivery\\
+\hline
+Topic 23&Tooling Design and Manufacture \\
+\hline
+Topic 24&Verification and Validation \\
+\hline
+Topic 25&Warranty and Performance-based Contract Management\\
+\hline
+\end{tabular}}
+\label{table 5: mapping plm}
+\end{table}
+
+\begin{table}[t]
+\caption{Similarity and Top Words}
+\resizebox{0.425\textwidth}{!}{\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Company ID}&\textbf{Similarity Rate}&\textbf{Top words}\\
+\hline
+Company 1&0.865&\{Information, Product, Data\}  \\
+\hline
+Company 2&0.766&\{Production, Work, Product\} \\
+\hline
+Company 3&0.672&\{Resource, Human, Product, Development\} \\
+\hline
+Company 4&0.753&\{Information, Data, Sharing\} \\
+\hline
+\end{tabular}}
+\label{table 6: similarity}
+\end{table}
+
+\subsubsection{Company 2}{\it The company 2 had three business unit. Thus, the participants had different opinions, as each business unit had a completely different product and each business model was different. When I looked at the results of this analysis, I thought that the reason that the topic of Verification and Validation was high was probably that they had a problem with their product quality. However, although the topic about Field Service has not been talked about in the actual workshop time, the frequency of topic 18 was high in this analysis result. In fact, this company does little field service work, so it is necessary to confirm why such analysis results were performed. In addition, the analysis results indicated that the frequency of Product Cost Management and Project Management topics was low. However, I think the discussions about costs and projects were relatively common during the actual discussions with them. Regarding the word distribution, the analysis result, it showed that the frequency of Production, Work, and Product were high. I agree with this result.}
+
+\subsubsection{Company 3}
+{\it The motivation for Company 3 to introduce PLM was to strengthen its field service operations. Looking at the analysis results, it was found that the topics with the highest frequency were field services, such as Warranty management, Performance Based Contract Management, Technical Service Parts Information, and Service Order Management. I agree this result as a professional consultant. However, regarding the monitoring and management of equipment, it was analyzed that the topic frequency was low. This is different from the actual situation, because in the actual workshop, the story of equipment monitoring was relatively well discussed. The frequency of words of Resource, Human, Product, and Development is high. Even during the actual workshop discussion, the shortage of human resources in field service was very problematic. Thus, I agree with the analysis results.}
+
+\subsubsection{Company 4}
+{\it Company 4 has been practicing efforts to make its factory a smart factory. As a consultant, what I noticed in their actual workshops was their lack of information sharing between departments and insufficient training of employees. On the other hand, looking at the results of this analysis, we found that the topic \# 22 was Technical and Service Part Information Creation and Delivery. At first, I wasn't interested in topic \# 22. However, after reviewing the content of discussions with the workshop participants at a later date, there was an opinion that attention was paid to the management of service parts in order to contribute to sustainable sales. It seems that the results of this analysis have taught me a topic that I did not notice at first. Looking at the analysis results of the word distribution, it seems that three words, Information, Data, and Sharing, appear frequently. This was exactly the issue that was being talked about at the workshop. Additionally, The analysis results seem to indicate that there is no relationship between education and system design. Further investigation is needed as I think education topic should be highly related in the workshop.}
+\bigskip
+
+Based on our analysis and feedback from professional consultant. We feel that our experiment on the usage of topic model with background knowledge in a industrial engineering discussion activity (in this case, PLM-themed) gives an actual contribution towards discussion overview in which, might improve consensus building process. The important takeaway of this  research is that topic modeling with background knowledge will assist professional consultant to understand more towards participant's latent opinion.
+
+\section{Conclusion and Future Works}
+In this paper, we proposed digitized approach to improve consensus building process in discussion activity held within industrial engineering context (PLM-themed). Our proposed method consists of performing data augmentation, implementing topic model with background knowledge, and calculating the distribution similarity. Finally, we validate the result on professional consultant. We received a relatively good feedback about this which validate our purpose of using a new approach to improve consensus building process.
+
+However, further approach is still necessary based on two perspective: consensus building and topic modeling. From consensus building perspective, we still need to assure the emotional state of discussion participants when dialog data is recorded. Some variables might aspect the quality and consistency of participant's opinion. Meanwhile from topic modeling perspective, we are planning to expand Source-LDA so it can afford different data representation like BTM and WNTM does.
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+%\section{Conclusion}
+%The conclusion goes here. this is more of the %conclusion
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank...
+%more thanks here
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+  
+\bibitem{b1} J.~Thomas-Lamar, S.~Mckearnan, and L.~Susskind, \emph{The Consensus Building Handbook: A Comprehensive Guide to Reaching Agreement}. \hskip 1em plus
+  0.5em minus 0.4em\relax SAGE Publications, 1999. pp. 7--9.
+  
+\bibitem{b2} N.~He, S.~Yao, and O.~Yoshie, \emph{Emotional speech classification in consensus building}. \hskip 1em plus
+  0.5em minus 0.4em\relax 2014 10th International Conference on Communications (COMM), Bucharest, 2014, pp. 1-4.
+  
+\bibitem{b3} S.~Goto, O.~Yoshie, and S.~Fujimura, \emph{Preliminary Study: Text mining approach to dialog data of stakeholders on requirement decision for Enterprise Information System}. \hskip 1em plus
+  0.5em minus 0.4em\relax 2019 10th Annual European Decision Sciences Institute (EDSI) Conference, Nottingham, 2019.
+
+\bibitem{b4} S.~Goto, O.~Yoshie, and S.~Fujimura, \emph{Empirical study of multi-party workshop facilitation in strategy planning phase for Product Lifecycle Management (PLM) system}. \hskip 1em plus
+  0.5em minus 0.4em\relax 2019 International Federation for Information Processing (IFIP) International Conference on Product Lifecycle Management, Moscow, 2019, pp. 82-93.
+
+\bibitem{b5} Y.~Katagiri et al., \emph{Implicit proposal filtering in multi-party consensus-building conversations}. \hskip 1em plus
+  0.5em minus 0.4em\relax Proceedings of the 9th SIGdial Workshop on Discourse and Dialogue, Columbus, 2008, pp. 100-103.
+
+\bibitem{b6} J.~Qiang, Z.~Qian, Y.~Li, Y.~Yuan, and X.~Wu, \emph{Short text topic modeling techniques, applications, and performance: a survey}. \hskip 1em plus
+  0.5em minus 0.4em\relax 2019.
+
+\bibitem{b7} J.~Wei and K.~Zou, \emph{EDA: Easy Data Augmentation techniques for boosting performance on text classification tasks}. \hskip 1em plus
+  0.5em minus 0.4em\relax Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), Hong Kong, 2019, pp. 6383-6389.
+
+\bibitem{b8} D.~M. Blei, A.~Y. Ng, and M.~I. Jordan, \emph{Latent Dirichlet Allocation}, {\it Proceedings of the 14th International Conference on Neural Information Processing Systems: Natural and Synthetic}. \hskip 1em plus
+  0.5em minus 0.4em\relax Vancouver, 2001, pp. 601-608.
+
+\bibitem{b9} J.~Wood, P.~Tan, W.~Wang, and C.~Arnold, \emph{Source-LDA: Enhancing probabilistic topic models using prior knowledge sources}. \hskip 1em plus
+  0.5em minus 0.4em\relax 33rd IEEE International Conference on Data Engineering (ICDE), San Diego, 2017, pp. 411-422. 
+
+\bibitem{b10} J.~A. Aslam and V.~Pavlu, \emph{Query hardness estimation using Jensen-Shannon Divergence among multiple scoring functions}. \hskip 1em plus
+  0.5em minus 0.4em\relax 29th European Conference on Information Retrieval Research (ECIR), Rome, 2007, pp. 198-209.
+
+\bibitem{b11} J.~Yin and J.~Wang, \emph{A dirichlet multinomial mixture model-based approach for short text clustering}. \hskip 1em plus
+  0.5em minus 0.4em\relax Proceedings of the 20th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York,2014, pp. 233-242.
+
+\bibitem{b12} D.~Q. Nyugen, R.~Billingsley, L.~Du, and M.~Johnson, \emph{Improving topic models with latent feature word representations}. \hskip 1em plus
+  0.5em minus 0.4em\relax Transactions of the Association for Computational Linguistics vol. 3, 2015, pp. 299-313.
+
+\bibitem{b13} C.~Li et al., \emph{Topic modeling for short texts with auxiliary word embeddings}. \hskip 1em plus
+  0.5em minus 0.4em\relax Proceedings of the 39th International ACM SIGIR Conference on Research and Development in Information Retrieval, Pisa, 2016, pp. 165-174.
+
+\bibitem{b14} C.~Li et al., \emph{Enhancing topic modeling for short texts with auxiliary word embeddings}. \hskip 1em plus
+  0.5em minus 0.4em\relax ACM Transactions on Information Systems (TOIS), 2017, pp. 1-30.
+
+\bibitem{b15} X.~Cheng, X.~Yan, Y.~Lan, and J.~Guo, \emph{Btm: Topic modeling over short texts}, {\it IEEE Transactions on Knowledge and Data Engineering}. \hskip 1em plus
+  0.5em minus 0.4em\relax 2014, pp. 2928-2941.
+
+\bibitem{b16} Y.~Zuo, J.~Zhao, and K.~Xu, \emph{Word network topic model: a simple but general solution for short and imbalanced texts}. \hskip 1em plus
+  0.5em minus 0.4em\relax Knowledge and Information Systems, 2016, pp. 379-398.
+
+\bibitem{b17} X.~Quan, C.~Kit, Y.~Ge, and S.~J. Pan, \emph{Short and sparse text topic modeling via self-aggregation}. \hskip 1em plus
+  0.5em minus 0.4em\relax Proceedings of the 24th International Conference on Artificial Intelligence, Buenos Aires, 2015, pp. 2270-2276.
+
+\bibitem{b18} Y.~Zuo et al., \emph{Topic modeling of short texts: A pseudo-document view}. \hskip 1em plus
+  0.5em minus 0.4em\relax Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining, San Fransisco, 2016, pp. 2105-2114.
+
+\bibitem{b19} K.~Ondrej and J.~Marlin, \emph{Product life cycle in digital factory}. \hskip 1em plus
+  0.5em minus 0.4em\relax Knowledge management and innovation: a business competitive edge perspective, Cairo, 2010, pp. 1881-1886.  
+
+\end{thebibliography}
+
+\appendix[Preliminary Experiment]
+\label{appendix_1}
+\noindent We conduct a preliminary experiment to prove the effectiveness of our method. The dialog data we used is an original data with very limited context and small corpus size. Hence, we would like to validate our method by experimenting it on a widely-used dataset. We performed data augmentation processes on Biomedical dataset taken from\cite{b6} which has 20 topics, 4498 corpus, 19448 documents, and 7.44 average document length. Then, we perform topic modeling using LDA, BTM, and PTM algorithm. Finally, we evaluate it by calculating their {\it topic coherence} value. After our preliminary experiment is finished, Fig.~\ref{fig_tmv} shows that data augmentation will improve topic quality on a certain degree.
+
+\begin{figure} [H]
+	\includegraphics[scale=0.425]{topic3.png}
+	\caption{Topic coherence value based on topic model and sentence augmentation process performed on Biomedical Dataset}
+\label{fig_tmv}
+\end{figure}
+
+
+% that's all folks
+\end{document}
+
+

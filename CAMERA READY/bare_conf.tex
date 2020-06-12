@@ -426,7 +426,7 @@ Kitakyushu, Japan 808-0135\\\IEEEauthorrefmark{1}muhammad.luthfi@akane.waseda.jp
 
 
 \begin{abstract}
-Analyzing discussion activities to find any latent opinions and hidden patterns is an important problem to improve consensus building process. A lot of approaches has been proposed in forms as set of instructions and frameworks such as causal model of Consensus Building Theory (CBT) and short-term intensive workshop in strategy planning phase of Product Lifecycla Management (PLM) process. This paper will analyse a new approach to improve consensus building process by summarizing discussion activiy. The novel method is done by performing data augmentation and topic modeling with the help of background knowledge on discussion activity held within industrial engineering context. Our method produce a complete summarization of discussion activity that consists of topic distribution and the degree of similarity between topics. We also found that the usage of data augmentation will improve topic quality. We validate our findings to a professional consultant and conclude that our approach gives an adequate contribution towards summarizing discussion activity that might improve consensus building process.
+Analyzing discussion activities to find any latent opinions and hidden patterns is an important problem to improve consensus building process. Several approaches have been proposed in forms of instructions and frameworks such as causal model of Consensus Building Theory (CBT) and short-term intensive workshop in strategy planning phase of Product Lifecycle Management (PLM) process. This paper will analyse a new approach to improve consensus building process by summarizing discussion activity. The proposed method is done by performing data augmentation and topic modeling with the help of background knowledge on discussion activity held within industrial engineering context. Our method produces a complete summarization of discussion activity that consists of topic distribution and distribution similarity between topics. We also found that the usage of data augmentation will improve topic quality. We validate our findings to a professional consultant and conclude that our approach gives an adequate contribution towards summarizing discussion activity that might improve consensus building process.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -449,21 +449,21 @@ topic model; background knowledge; consensus building; product lifecycle managem
 
 \section{Introduction}
 % no \IEEEPARstart
-A conventional discussion activity happened when a group of people let out their own opinion with appropriate feedbacks from the other. In industries, discussions are being held in various departments to solve specific problems. We can characterize such discussions as a group of people who shares a same interest aimed to build one single consensus. Furthermore, consensus building is important because it can resolves dispute more effectively by involving people from various levels and departments in an organization\cite{b1}. Nowadays, most companies are using consensus building approach on the requirement decision part of their products, hence making such activities as a specific-themed discussion activity. The practice of consensus building often times still have frequent problems. During discussion activities, various stakeholders with different personalities and backgrounds are present might influence final conclusion\cite{b2} which will affect tendency and direction of the discussion\cite{b3}.
+A conventional discussion activity happened when a group of people let out their own opinion with appropriate feedbacks from the other. In industries, discussions are being held in various departments to solve specific problems. We can characterize such discussions as a group of people who shares a same interest aimed to build one single consensus. Furthermore, consensus building is important because it can resolve dispute more effectively by involving people from various levels and departments in an organization\cite{b1}. Nowadays, most companies are using consensus building approach on the requirement decision part of their products, hence making such activities as a specific-themed discussion activity. The practice of consensus building often still have frequent problems. During discussion activities, various stakeholders with different personalities and backgrounds are present might influence conclusion\cite{b2} which will affect tendency and direction of the discussion\cite{b3}.
  
-Couple of methods can be implemented inside discussion activity to improve consensus quality such as recording, facilitation, and mediation\cite{b1}. Recording in this term stands for creating a physical record of what subject being discussed. Recording can be implemented by actually recording the whole discussion as a video file or even as simple as taking notes on participant's utterance. Facilitation in a second hand, help participants work together by providing artifact containing the discussion progress which everyone agrees on. Finally, mediation acts to help opposite parties deal with disagreement. In order to perform mediation, one independent person is needed to resolve disputes with his/her objective point of view.
+Some important features of consensus building process are recording, facilitation, and mediation\cite{b1}. Recording in this term stands for creating a physical record of what subject being discussed. Recording can be implemented by recording the whole discussion as a video file or even as simple as taking notes on participant's utterance. Facilitation in a second hand, help participants work together by providing artefact containing the discussion progress which everyone agrees on. Finally, mediation acts to help opposite parties deal with disagreement. In order to perform mediation, one independent person is needed to resolve disputes with his/her objective point of view.
 
 \section{Related Works}
 \label{sec_rp}
-Researches related to consensus building has been conducted years ago. In general, researches focused on consensus building can be divided into 2 categories based on their focus point; process model and measurement model. All models are designed under the same goal: to improve consensus quality.
+Researches related to consensus building have been conducted years ago. In general, researches focused on consensus building can be divided into 2 categories based on their focus point; process model and measurement model. All models are designed under the same goal: to improve consensus quality.
 
-Process model focused on a set of rules that participants should follow under specific circumstances. A research might propose a straight forward approach e.g.  using a fair, open, and freedom-focused process model\cite{b20}, meaning that all perspective will be considered equal and all participants will have their freedom to disagree. A research might be focused specifically on a subprocess in consesus building e.g. Consensus Building Theory (CBT)\cite{b21}  that emphasizes the cause of conflict to investigate what specific matter prevent or support a consensus to built. Other research is focused on a specific implementation of process model\cite{b3} e.g. propossing a short term and intensive workshop activity designed for Product Lifecycle Management (PLM) strategy planning phase which involves multi-party stakeholders. The workshop is then intended specifically for dicussion under digital transformation for smart, connected engineering field.
+Process model focused on a set of rules that participants should follow under specific circumstances. A research proposed a straightforward approach using a fair, open, and freedom-focused process model\cite{b20}, meaning that all perspective will be considered equal and all participants will have their freedom to disagree. Another research is focused specifically on a subprocess in consensus building like Consensus Building Theory (CBT)\cite{b21} which emphasizes the cause of conflict to investigate what specific matter prevent or support consensus building. Other research is focused on a specific implementation of process model\cite{b3} e.g. proposing a short term and intensive workshop activity designed for Product Lifecycle Management (PLM) strategy planning phase which involves multi-party stakeholders. The workshop is intended specifically for discussion under digital transformation for smart, connected engineering field.
 
-Meanwhile, measurement model focused more on the criteria to determine the consensus presence. Some popular methods are done by using standard deviation of voting results or using Kendall's coefficient on voting results\cite{b22}. A recent method showed that a digitized approach can be done by tracking every non-verbal aspects of each participant to determine consensus\cite{b5}. Another digitized approach has been done in 2 steps: the first step is inviting an external facilitator as one independent figure to direct the course of discussion, and the second step is doing text mining approach on the dialog data taken from the discussion to evaluate consensus\cite{b4}.   
+Meanwhile, measurement model focused more on the criteria to determine consensus presence. Some popular methods are done by using standard deviation of voting results or using Kendall's coefficient on voting results\cite{b22}. A recent method showed that a digitized approach can be done by tracking every non-verbal aspects of each participant to determine consensus\cite{b5}. Another digitized approach has been done in 2 steps: inviting external facilitator as one independent figure to direct the course of discussion and doing text mining approach on the dialog data taken from the discussion to evaluate consensus\cite{b4}.   
 
 \section{Research Problem}
 \label{sec_rp}
-Previous researches discussed on how consensus is being built by considering  a lot of variables e.g. time consumed, participants contributions, and conflict resolution. In another hand, more variables should be valued more such as the objectivity of the final consensus and the latent opinion from each participants. This paper tries to discover latent opinion from each participants and avoid biased judgment which rarely discussed by previous researches. We proposed a text mining approach by utilizing topic model algorithms and a set of data as Background Knowledge. We are utilizing dialog data from PLM-themed discussion activity to detect hidden pattern and latent opinion from participants. Then, we will validate our findings with a professional consultant to discover the method's effectiveness. However, a preliminary study regarding this matter has been conducted\cite{b4} and this research act as the extension of it with approval from the original author.
+Previous researches discussed on how consensus is being built by considering  a lot of variables e.g. time consumed, participants contributions, and conflict resolution method. In another hand, more variables should be valued more such as the objectivity of the final consensus and the latent opinion from each participant. This paper tries to discover latent opinion from each participant and avoid biased judgment which rarely discussed by previous researches. We proposed a text mining approach by utilizing topic model algorithms and a set of data as Background Knowledge, and calculating the convergence rate among topic distributions. Data augmentation is also added in the process to increase data quality. However, a preliminary study regarding this matter has been conducted\cite{b4} and this research act as the extension of it with approval from the original author.
 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
@@ -473,10 +473,11 @@ Previous researches discussed on how consensus is being built by considering  a 
 
 
 \section{Proposed Method}
+\label{sec_pm}
 In this research, we performed a digitized approach of dialog data from PLM-themed discussion activity sessions using data augmentation, topic model with background knowledge, and distribution similarity. First, the data will be prepared by a simple preprocess method and data augmentation. The clean and augmented data will then be experimented by various topic models and hyperparameters, we picked the best configuration and incorporate it into background-knowledge-backed topic model to generate topic distributions. Then, we will calculate the distribution similarity as convergence rate. Finally, a professional consultant will analyse the results to get an objective review. To summarize, we will take dialog data of discussion session and transform it into topic distributions, similarity value, and most frequent words (if necessary) from each discussion session to be validated by a professional consultant.
 
 \subsection{Data Augmentation}
-We took a real life dialog data from discussion sessions which ran for 1-2 hour long. Based on the dataset characteristics in Table~\ref{table 1: dataset characteristics},
+We took a real-life dialog data from discussion sessions which ran for 1-2 hour long. Based on the dataset characteristics in Table~\ref{table 1: dataset characteristics},
 \begin{table}[b]
 \renewcommand{\arraystretch}{1.3}
 \caption{Dataset Characteristics}
@@ -494,10 +495,10 @@ Average Length&4.83&7.84 \\
 \hline
 \end{tabular}
 \end{table}
-the dataset we used is very poor. Compared to the common dataset in topic model research with specialization in short text data, our dataset size is 96.55\% lower in terms of number of documents and 85.96\% lower in terms of corpus size. Hence, we are using data augmentation techniques to improve dataset quality. We expand the Easy Data Augmentation\cite{b7} by adding additional processes: hypernym replacement and hyponym replacement. Hypernym and hyponym of a word is crucial as we thought the topic mixture of a sentence {\it s} should be the same with other sentence {\it s'} who has hypernym/hyponym relation with some words inside it.
+the dataset we used is very poor. Compared to the common dataset in topic model research with specialization in short text data, our dataset size is 96.55\% lower in terms of number of documents and 85.96\% lower in terms of corpus size. Hence, we are using data augmentation techniques to improve dataset quality. We expand the Easy Data Augmentation\cite{b7} by adding additional processes: hypernym replacement and hyponym replacement. Hypernym and hyponym of a word is crucial as we thought the topic mixture of a sentence {\it s} should be the same with another sentence {\it s'} who has hypernym/hyponym relation with it.
 
 \subsection{Topic Model with Background Knowledge}
-We tried to mine latent opinion of the dataset  using topic  model with background knowledge. Topic model is an unsupervised learning approach where we could transform documents into document-to-topic distributions and topic-to-word distributions. In topic model point of view, document is a mixture of topic where topic itself is a mixture of word. The most popular method of topic model is Latent Dirichlet Allocation (LDA)\cite{b8}, in which, most currently available topic model is proposed based on that. In LDA-based topic model, the learning process consists of generation process and sampling process. In generative process, the initial document-to-topic distributions and topic-to-word distributions are generated using hyperparameter $\alpha$ and $\beta$. Then, in the sampling process, distributions are evaluated by recalculating it using Gibbs Sampling for each and every word. The graphical notation of LDA topic model is shown in Fig.~\ref{fig_lda}, while the generation algorithm is:
+We tried to mine latent opinion of the dataset  using topic  model with background knowledge. Topic model is an unsupervised learning approach where we could transform documents into document-to-topic distributions and topic-to-word distributions. In topic model point of view, document is a mixture of topic where topic itself is a mixture of word. The most popular method of topic model is Latent Dirichlet Allocation (LDA)\cite{b8}, in which, current topic model researches mostly use LDA as baseline method. In LDA-based topic model, the learning process consists of generation process and sampling process. In generative process, the initial document-to-topic distributions and topic-to-word distributions are generated using hyperparameter $\alpha$ and $\beta$. Then, in the sampling process, distributions are evaluated by recalculating it using Gibbs Sampling for each word. The graphical notation of LDA topic model is shown in Fig.~\ref{fig_lda}, while the generation algorithm is:
 \bigskip
 
 %\begin{algorithm}[H]
@@ -535,9 +536,9 @@ We tried to mine latent opinion of the dataset  using topic  model with backgrou
 \label{fig_lda}
 \end{figure}
 
-\noindent where {\it K} is the number of topics, {\it D} is the number of documents, $N_d$ is the number of words in document $d$, $\phi_k$ is topic-to-word distribution for topic {\it k}, $\theta_d$ is document-to-topic distribution for document {\it d}, $z_{id}$ is topic for the $i_{th}$ word in document {\it d}, and $w_{id}$ is the $i_{th}$ word in document {\it d}.
+\noindent where {\it K} is number of topics, {\it D} is number of documents, $N_d$ is number of words in document $d$, $\phi_k$ is topic-to-word distribution for topic {\it k}, $\theta_d$ is document-to-topic distribution for document {\it d}, $z_{id}$ is topic for the $i_{th}$ word in document {\it d}, and $w_{id}$ is the $i_{th}$ word in document {\it d}.
 
-In our approach, we realize that our dataset has relatively smaller size compared to common topic model researches. Hence, we assembled various topic models with speciality in short text as suggested by\cite{b6}. The whole list of topic models could be seen in Table~\ref{table 2: topic model experiment} that could be categorized into 4 types. The first type is standard, referred to the baseline topic model which is LDA. The second type, one-topic sampling based, will modify the inference process to sample only one topic for one document, meaning all words from a single document will only have one topic label. The third type, global word co-occurence based, will modify the document representation into word-network or set of biterms. Self-aggregation based as the last type will merge a number of documents into one single pseudo-document and then apply standard-type topic model to it. 
+We mentioned in previous paragraph that our dataset has relatively smaller size compared to common topic model researches. Hence, we assembled various topic models with specialty in short text as suggested by\cite{b6}. The whole list of topic models could be seen in Table~\ref{table 2: topic model experiment} that could be categorized into 4 types. The first type is standard, referred to the baseline topic model which is LDA. The second type, one-topic sampling based, will modify the inference process to sample only one topic per document, meaning all words from a single document will only have one topic label. The third type, global word co-occurrence based, will modify document representation into word-network or set of biterms. Self-aggregation based as the last type will merge several documents into one single pseudo-document and then apply standard-type topic model to it. 
 
 \begin{table}[b]
 \renewcommand{\arraystretch}{1.3}
@@ -568,19 +569,17 @@ In our approach, we realize that our dataset has relatively smaller size compare
 \end{tabular}}
 \end{table}
 
-After the experiment is done we will decide what is the best topic model, hyperparameters, and the number of sentence augmentation processes to use. After that, we will incorporate the result to a new background-knowledge-backed topic model called Source-LDA\cite{b9} as the most suitable topic model for our case. In Source-LDA, we are able to provide background knowledge data to influence topic labeling thus improving topic quality in the process.
+After the experiment is done, we will decide what is the best topic model, hyperparameters, and the number of sentence augmentation processes to use. After that, we will incorporate the result to a new background-knowledge-backed topic model called Source-LDA\cite{b9} as the most suitable topic model for our case. In Source-LDA, we can use background knowledge data to influence topic labeling thus improving topic quality in the process.
 
 \subsection{Distribution Similarity}
-In this step, we aimed to picture the topic distribution into a single value that describes the rate of consensus built (agreement rate). In order to do this, we used distribution similarity calculation using Jensen-Shannon Divergence across all distributions\cite{b10}. This concludes the final step of our proposed method.
+In this step, we aimed to picture the topic distribution into a single value that describes the rate of consensus built (convergence rate). In order to do this, we used distribution similarity calculation using Jensen-Shannon Divergence across all distributions\cite{b10}. This concludes the final step of our proposed method.
 
 \section{Experiment}
 \label{sec_exp}
-We had an opportunity to utilize dialog data from requirement decisions (discussion session) of 4 Japanese companies. Data preprocessing and sentence augmentation is done to clean the data. The comparison of dataset characteristics before and after augmentation is shown in Table~\ref{table 3: augmented dataset characteristics}. We managed to expand the dataset up to 1634.46\% from the original size in terms of number of documents, and up to 145.04\% in terms of corpus size. 
+We had an opportunity to utilize dialog data from requirement decisions (discussion session) of 4 Japanese companies. Firstly, data preprocessing and sentence 
+augmentation is done to clean the data. The comparison of dataset characteristics before and after augmentation is shown in Table~\ref{table 3: augmented dataset characteristics}. We managed to expand the dataset up to 1634.46\% from the original size in terms of number of documents, and up to 145.04\% in terms of corpus size. 
 
-Furthermore, the property for each sentence in dataset is presented in Table~\ref{table 4: dataset property}. There are 2 types of question which are problem, reffered to opinions retrieved at the early stage of discussion, and solution, reffered to opinions retrieved at the later stage of discussion. Response category is reffered to the participant's own divison, while organization level reffered to the participant's hiearchical level in the company.
-
-Following the data preprocessing step, topic model experiment is conducted on all topic models in Table~\ref{table 2: topic model experiment}. We used {\it topic coherence} to evaluate topic model performance because our dataset is raw and golden label for each sentence is not present\cite{b6}. The result of topic model experiment is shown in Fig.~\ref{fig_tme}. The hyperparameter used in this experiment is number of iteration (1000-2000),  $\alpha$ value (0.05-0.3), and  $\beta$ value (0.005-0.03). The value shown is the average of topic coherence score across various hyperparameters for each sentence augmentation processes. Based on the number of sentence augmentation process, 9 augmentation is not producing a significant result while 1 augmentation gives the best and 
-\begin{table}[h]
+\begin{table}[t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Augmented Dataset Characteristics}
 \label{table 3: augmented dataset characteristics}
@@ -599,7 +598,10 @@ No Augmentation&\multirow{2}{*}{\shortstack{383}}&\multirow{2}{*}{\shortstack{68
 \hline
 \end{tabular}}
 \end{table}
-\begin{table}[h]
+
+Furthermore, the dataset property is presented in Table~\ref{table 4: dataset property}. During dialog data collecting process, 2 types of question were asked. Problem-type question was given at the early stage of discussion while solution-type question is asked at the later stage of discussion. Another property is 'response category' that referred to participant's own division, and 'organization level' that referred to participant's hierarchical  level in the company.
+
+\begin{table}[b]
 \renewcommand{\arraystretch}{1.3}
 \caption{Dataset Property}
 \label{table 4: dataset property}
@@ -620,7 +622,8 @@ Opinion&\{short sentence consists around 5 words\} \\
 \hline
 \end{tabular}}
 \end{table}
-most consistent result. Self-Augment Topic Model (SATM) gives a good overall score regardless the number of sentence augmentation process. However, LDA held the best score of all experiment with 1 augmentation process. We picked LDA topic model with $\alpha$ value of 0.15, $\beta$ vaue of 0.01, 2000 iteration, and 1 sentence augmentation process as the best configuration.
+
+Following data preprocessing step, topic model experiment is conducted on all topic models in Table~\ref{table 2: topic model experiment}. We used {\it topic coherence} value to evaluate topic model performance because our dataset is raw and doesn't have any golden labels\cite{b6}. The result of topic model experiment is shown in Fig.~\ref{fig_tme}. The hyperparameter used in this experiment is number of iteration (1000-2000),  $\alpha$ value (0.05-0.3), and  $\beta$ value (0.005-0.03). The number shown in the figure is the average of topic coherence value of all possible hyperparameters for each sentence augmentation processes. Based on the number of sentence augmentation, 9 augmentation is not producing significant result while 1 augmentation gives the best and most consistent result. Self-Augment Topic Model (SATM) gives a good overall score regardless the number of sentence augmentation process. However, LDA held the best score of all experiment with 1 augmentation process. We picked LDA topic model with $\alpha$ value of 0.15, $\beta$ value of 0.01, 2000 iteration, and 1 sentence augmentation process as the best configuration.
 
 \begin{figure}[t]
 	\includegraphics[scale=0.425]{new-topic1.pdf}
@@ -628,7 +631,7 @@ most consistent result. Self-Augment Topic Model (SATM) gives a good overall sco
 \label{fig_tme}
 \end{figure}
 
-The next step is to incorporate this configuration into  Source-LDA. Based on our research problem from Section~\ref{sec_rp}, PLM topics is used as the background knowledge data. We decided to use PTC Value Roadmap\footnote{\url{http://support.ptc.com/WCMS/files/28837/en/J1051_ValueRoadmap_TS.pdf}} because it contains 26 PLM Topics with complete definitions for each topics. The background knowledge dataset held a relative big size consisting of 26 topics, 1068 unique words, and 145.88 average document length. 
+The next step is to incorporate the best configuration into  Source-LDA. Based on our proposed method in Section~\ref{sec_pm}, we are using PLM-themed discussion activity as our dataset. Hence, PLM topics is used as the background knowledge data. We decided to use PTC Value Roadmap\footnote{\url{http://support.ptc.com/WCMS/files/28837/en/J1051_ValueRoadmap_TS.pdf}} because it contains many PLM Topics with complete definitions for each topic. The background knowledge dataset held a relatively big size consisting of 26 topics, 1068 unique words, and 145.88 average document length. 
 
 Fig.~\ref{fig_tme2}
 \begin{figure}[b]
@@ -636,13 +639,16 @@ Fig.~\ref{fig_tme2}
 	\caption{Topic coherence value based on background knowledge (BK) augmentation process}
 \label{fig_tme2}
 \end{figure}
-shows the topic coherence value relative to the number of sentence augmentation process applied to background knowledge dataset. The topic coherence value is increasing proportionally with the number of sentence augmentation. We only used LDA algorithm because it is the best configuriation we conclude from prior experiment. The usage of sentence augmentation on background knowledge improves topic coherence from 1.47\% to 3.25\%. We picked 12 sentence augmentation process on background knowledge as the best configuration. In addition, the usage of background knowledge also improves the topic coherence value from 1.307 (LDA without background knowledge) to 1.311 (LDA with background knowledge).
+shows the topic coherence value relative to the number of sentence augmentation process applied to background knowledge dataset. The topic coherence value is increasing proportionally with the number of sentence augmentation. We only used LDA algorithm because it is the best configuration we conclude from previous paragraph. The usage of sentence augmentation on background knowledge improves topic coherence up to 3.25\%. We picked 12 sentence augmentation process on background knowledge as the best configuration. In addition, the usage of background knowledge also improves the topic coherence value from 1.307 (LDA without background knowledge) to 1.311 (LDA with background knowledge).
 
-The end-result of this experiment is using LDA topic model, $\alpha$ value of 0.15, $\beta$ value of 0.01, 2000 iteration, 1 sentence augmentation on dialog dataset, and 12 sentence augmentation on background knowledge as the go-to configuration for future use.
+The final best configuration we found is by using LDA topic model, $\alpha$ value of 0.15, $\beta$ value of 0.01, 2000 iteration, 1 sentence augmentation on dialog dataset, and 12 sentence augmentation on background knowledge.
 
 \section{Results and Discussion}
-In this section, the qualitative evaluation of the result will be presented. The mapping of topic number with its actual name can be seen at Table~\ref{table 5: mapping plm}
-\begin{table}[ht]
+In this section, we applied the best configuration stated in Section~\ref{sec_exp} to create topic distributions of the dataset. Then, we calculate the convergence rate among topic distributions and do qualitative evaluation together with external facilitator. 
+
+During topic modeling process, we replaced background knowledge's topic name with its topic number to increase readability. The mapping of topic number with its actual name can be seen at Table~\ref{table 5: mapping plm} with a side note that the order of topic number is in alphabetical order and different with what shown in the reference (PTC Value Roadmap). There are 26 PLM Topics in total that serves as best practice for a specific business unit.
+
+\begin{table}[t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Mapping of PLM Topics}
 \label{table 5: mapping plm}
@@ -711,9 +717,8 @@ Topic 24&Verification and Validation \\
 \hline
 \end{tabular}}
 \end{table}
-with a side note that the order of topic number is in alphabetical order and different with what shown in the reference (PTC Value Roadmap). There are 26 PLM Topics in total that serves as the best practice for a specific business unit.
 
- The average topic distribution from each company calculated with the best configuration stated in Section~\ref{sec_exp} is shown in Fig.~\ref{fig_c}. The most probable and least probable topic is different for each company. For example, company 1 that runs in business process innovation industry discussed a lot about topic \#12 (Project Management) and very little about topic \#24 (Verification and Validation). Meanwhile, Company 2 from automotive manufacturer industry had a huge interest in topic \#18 (Service Order Management and Field Service) but not in topic \#22 (Technical and Service Parts Information Creation and Delivery). Company 3 from aqua industry has topic \#19 (Service Parts Planning and Pricing) as the most probable topic and topic \#2 (Component and Supplier Management) as the least probable topic. Lastly, company 4 from automotive supplier industry had topic \#22 and topic \#21 (System Architecture Design) as their most probable topics.
+The average topic distribution of sentences in dialog data from each company is shown in Fig.~\ref{fig_c}. The most probable and least probable topic is different for each company. For example, company 1 that runs in business process innovation industry discussed a lot about topic \#12 (Project Management) and very little about topic \#24 (Verification and Validation). Meanwhile, Company 2 from automotive manufacturer industry had a huge interest in topic \#18 (Service Order Management and Field Service) but not in topic \#22 (Technical and Service Parts Information Creation and Delivery). Company 3 from aqua industry has topic \#19 (Service Parts Planning and Pricing) as the most probable topic and topic \#2 (Component and Supplier Management) as the least probable topic. Lastly, company 4 from automotive supplier industry had topic \#22 and topic \#21 (System Architecture Design) as their most probable topics.
 
 
 % An example of a floating table. Note that, for IEEE style tables, the 
@@ -740,25 +745,44 @@ with a side note that the order of topic number is in alphabetical order and dif
 %\end{tabular}
 %\end{table}
 
+Given the topic distributions, we will conduct similarity measurement using JS Divergence to find convergence rate. The interpretation value of JS divergence ranges from 0-1. All value approaching to 0 means that there is no variation between probability distributions, meanwhile value approaching to 1 means that there is high variation between probability distributions. The convergence of each discussion sessions can be seen at Table~\ref{table 6: similarity} along with the top frequent words. The overall convergence rate achieved from each discussion is probably not too good since each one has convergence rate above 0.500. The lowest degree of convergence was achieved by Company 1 with 0.865 while the highest degree of convergence was achieved by Company 3 with 0.672.  The top words from each discussion acts as a support to better understand the discussion.
+
+Given the results, here is the feedback from professional consultant for each discussion session:
+\medskip
+
+\subsubsection{Company 1}
+{\it Company 1 had a key problem in terms of information exchange between design and manufacturing. I agree that the frequency of Design and Manufacturing topics was high. However, the topic of Project Management was rarely spoken directly by their voices. In addition, the analysis results show that there are few topics on Manufacturing Process Management. Certainly, there were few remarks on Manufacturing Process Management when the workshop was actually held. However, one of the participants was very concerned about the topic and he is one of the important people in the PLM project, so even if it is a minority opinions, I cannot ignore it as my consultant perspective. By the way, in the analysis results, the words with the highest frequency of occurrence were Information, Product, and Data. These were key words that participants often talked about during the actual workshop. As a consultant, I agree with that.}
+\smallskip
+
+\subsubsection{Company 2}
+{\it The company 2 had three business unit. Thus, the participants had different opinions, as each business unit had a completely different product and each business model was different. When I looked at the results of this analysis, I thought that the reason that the topic of Verification and Validation was high was probably that they had a problem with their product quality. However, although the topic about Field Service has not been talked about in the actual workshop time, the frequency of topic 18 was high in this analysis result. In fact, this company does little field service work, so it is necessary to confirm why such analysis results were performed. In addition, the analysis results indicated that the frequency of Product Cost Management and Project Management topics was low. However, I think the discussions about costs and projects were relatively common during the actual discussions with them. Regarding the word distribution, the analysis result, it showed that the frequency of Production, Work, and Product were high. I agree with this result.}
+\smallskip
+
+\subsubsection{Company 3}
+{\it The motivation for Company 3 to introduce PLM was to strengthen its field service operations. Looking at the analysis results, it was found that the topics with the highest frequency were field services, such as Warranty management, Performance Based Contract Management, Technical Service Parts Information, and Service Order Management. I agree this result as a professional consultant. However, regarding the monitoring and management of equipment, it was analyzed that the topic frequency was low. This is different from the actual situation, because in the actual workshop, the story of equipment monitoring was relatively well discussed. The frequency of words of Resource, Human, Product, and Development is high. Even during the actual workshop discussion, the shortage of human resources in field service was very problematic. Thus, I agree with the analysis results.}
+\smallskip
+
 \begin{figure*}[t]
 	\subfloat[Topic distributions for company 1]{\label{fig_c1}\includegraphics[scale=0.425]{new-company1.pdf}}
 	\subfloat[Topic distributions for company 2]{\label{fig_c2}\includegraphics[scale=0.425]{new-company2.pdf}}\\
 	\subfloat[Topic distributions for company 3]{\label{fig_c3}\includegraphics[scale=0.425]{new-company3.pdf}}
 	\subfloat[Topic distributions for company 4]{\label{fig_c4}\includegraphics[scale=0.425]{new-company4.pdf}}
-\caption{Average topic distributions of all company}
+\caption{Average topic distributions of sentences in dialog data of all company}
 \label{fig_c}
 \end{figure*}
 
-Topic distribution has finally obtained so we can proceed with similarity measurement using JS Divergence. All value approaching to 0 means that there is no variation between probability distributions, meanwhile value approaching to 1 means that there is high variation between probability distributions. The similarity of each discussion sessions can be seen at Table~\ref{table 6: similarity} along with the top frequent words. The overall similarity achieved from each discussion is probably not too good since each one has similarity rate above 0.500. The lowest degree of similarity was achieved by Company 1 with 0.865 while the highest degree of similarity was achieved by Company 3 with 0.672.  The top words from each discussion acts as a support to understand the discussion more.
+\subsubsection{Company 4}
+{\it Company 4 has been practicing efforts to make its factory a smart factory. As a consultant, what I noticed in their actual workshops was their lack of information sharing between departments and insufficient training of employees. On the other hand, looking at the results of this analysis, we found that the topic \# 22 was Technical and Service Part Information Creation and Delivery. At first, I wasn't interested in topic \# 22. However, after reviewing the content of discussions with the workshop participants at a later date, there was an opinion that attention was paid to the management of service parts in order to contribute to sustainable sales. It seems that the results of this analysis have taught me a topic that I did not notice at first. Looking at the analysis results of the word distribution, it seems that three words, Information, Data, and Sharing, appear frequently. This was exactly the issue that was being talked about at the workshop. Additionally, The analysis results seem to indicate that there is no relationship between education and system design. Further investigation is needed as I think education topic should be highly related in the workshop.}
+\medskip
 
-\begin{table}[ht]
+\begin{table}[b]
 \renewcommand{\arraystretch}{1.3}
-\caption{Similarity and Top Words}
+\caption{Convergence Rate and Top Words}
 \label{table 6: similarity}
 \centering
 {\begin{tabular}{|c|c|P{3.5cm}|}
 \hline
-\textbf{Company ID}&\textbf{Similarity Rate}&\textbf{Top words}\\
+\textbf{Company ID}&\textbf{Convergence Rate}&\textbf{Top words}\\
 \hline
 Company 1&0.865&\{Information, Product, Data\}  \\
 \hline
@@ -771,30 +795,16 @@ Company 4&0.753&\{Information, Data, Sharing\} \\
 \end{tabular}}
 \end{table}
 
-Given the results, here is the feedback from professional consultant for each discussion session:
-\medskip
 
-\subsubsection{Company 1}
-{\it Company 1 had a key problem in terms of information exchange between design and manufacturing. I agree that the frequency of Design and Manufacturing topics was high. However, the topic of Project Management was rarely spoken directly by their voices. In addition, the analysis results show that there are few topics on Manufacturing Process Management. Certainly, there were few remarks on Manufacturing Process Management when the workshop was actually held. However, one of the participants was very concerned about the topic and he is one of the important people in the PLM project, so even if it is a minority opinions, I cannot ignore it as my consultant perspective. By the way, in the analysis results, the words with the highest frequency of occurrence were Information, Product, and Data. These were key words that participants often talked about during the actual workshop. As a consultant, I agree with that.}
-\medskip
-
-\subsubsection{Company 2}
-{\it The company 2 had three business unit. Thus, the participants had different opinions, as each business unit had a completely different product and each business model was different. When I looked at the results of this analysis, I thought that the reason that the topic of Verification and Validation was high was probably that they had a problem with their product quality. However, although the topic about Field Service has not been talked about in the actual workshop time, the frequency of topic 18 was high in this analysis result. In fact, this company does little field service work, so it is necessary to confirm why such analysis results were performed. In addition, the analysis results indicated that the frequency of Product Cost Management and Project Management topics was low. However, I think the discussions about costs and projects were relatively common during the actual discussions with them. Regarding the word distribution, the analysis result, it showed that the frequency of Production, Work, and Product were high. I agree with this result.}
-
-\subsubsection{Company 3}
-{\it The motivation for Company 3 to introduce PLM was to strengthen its field service operations. Looking at the analysis results, it was found that the topics with the highest frequency were field services, such as Warranty management, Performance Based Contract Management, Technical Service Parts Information, and Service Order Management. I agree this result as a professional consultant. However, regarding the monitoring and management of equipment, it was analyzed that the topic frequency was low. This is different from the actual situation, because in the actual workshop, the story of equipment monitoring was relatively well discussed. The frequency of words of Resource, Human, Product, and Development is high. Even during the actual workshop discussion, the shortage of human resources in field service was very problematic. Thus, I agree with the analysis results.}
-\medskip
-
-\subsubsection{Company 4}
-{\it Company 4 has been practicing efforts to make its factory a smart factory. As a consultant, what I noticed in their actual workshops was their lack of information sharing between departments and insufficient training of employees. On the other hand, looking at the results of this analysis, we found that the topic \# 22 was Technical and Service Part Information Creation and Delivery. At first, I wasn't interested in topic \# 22. However, after reviewing the content of discussions with the workshop participants at a later date, there was an opinion that attention was paid to the management of service parts in order to contribute to sustainable sales. It seems that the results of this analysis have taught me a topic that I did not notice at first. Looking at the analysis results of the word distribution, it seems that three words, Information, Data, and Sharing, appear frequently. This was exactly the issue that was being talked about at the workshop. Additionally, The analysis results seem to indicate that there is no relationship between education and system design. Further investigation is needed as I think education topic should be highly related in the workshop.}
-\bigskip
-
-Based on our analysis and feedback from professional consultant. We feel that our experiment on the usage of topic model with background knowledge in a industrial engineering discussion activity (in this case, PLM-themed) gives an actual contribution towards discussion overview in which, might improve consensus building process. The important takeaway of this  research is that topic modeling with background knowledge will assist professional consultant to understand more towards participant's latent opinion.
+Based on our analysis and feedback from professional consultant. We feel that our experiment on the usage of topic model with background knowledge in an industrial engineering discussion activity (in this case, PLM-themed) gives an actual contribution towards discussion summarization in which, might improve consensus building process. The important takeaway of this  research is that topic modeling with background knowledge will assist professional consultant to understand more towards participant's latent opinion.
 
 \section{Conclusion and Future Works}
-In this paper, we analysed a new digitized approach to improve consensus building process in discussion activity held within industrial engineering context (PLM-themed). Our proposed method consists of performing data augmentation, implementing topic model with background knowledge, and calculating the distribution similarity. Finally, we validate the result on professional consultant. We received good feedback which validate our purpose of using a new approach to improve consensus building process.
+In this paper, we analysed a new digitized approach to improve consensus building process in discussion activity held within industrial engineering context (PLM-themed). Our proposed method consists of performing data augmentation, implementing topic model with background knowledge, and calculating the distribution similarity. Finally, we validate the result on professional consultant. We received good feedback which validates our purpose of using a new approach to improve consensus building process. Moreover, we also found that using data augmentation in topic modeling will improve its topic quality.
 
 However, further approach is still necessary based on two perspective: consensus building and topic modeling. From consensus building perspective, we still need to assure the emotional state of discussion participants when dialog data is recorded. Some variables might aspect the quality and consistency of participant's opinion. Meanwhile from topic modeling perspective, we are planning to expand Source-LDA so it can afford different data representation like BTM and WNTM does.
+
+We also provide a future research direction to accommodate novel ideas of discussion summarization through Internet of Things (IoT) devices. Some examples are but not limited to using our method to process dialog data on-the-fly during discussion process, and automatically providing background knowledge data based on participant's utterances.
+
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
 % For figures, \caption should occur after the \includegraphics.
@@ -962,7 +972,7 @@ However, further approach is still necessary based on two perspective: consensus
 
 \appendix[Preliminary Experiment]
 \label{appendix_1}
-\noindent We conduct a preliminary experiment to prove the effectiveness of our method. The dialog data we used is an original data with very limited context and small corpus size. Hence, we would like to validate our method by experimenting it on a widely-used dataset. We performed data augmentation processes on Biomedical dataset taken from\cite{b6} which has 20 topics, 4498 corpus, 19448 documents, and 7.44 average document length. Then, we perform topic modeling using LDA, BTM, and PTM algorithm. Finally, we evaluate it by calculating their {\it topic coherence} value. After our preliminary experiment is finished, Fig.~\ref{fig_tmv} shows that data augmentation will improve topic quality on a certain degree.
+\noindent We conduct a preliminary experiment to prove the effectiveness of our method. The dialog data we used is an original data with very limited context and small corpus size. Hence, we would like to validate our method by experimenting it on a widely used dataset. We performed data augmentation processes on Biomedical dataset taken from\cite{b6} which has 20 topics, 4498 corpus, 19448 documents, and 7.44 average document length. Then, we perform topic modeling using LDA, BTM, and PTM algorithm. Finally, we evaluate it by calculating their topic coherence value. Fig.~\ref{fig_tmv} shows that data augmentation will improve topic quality on a certain degree.
 
 \begin{figure} [H]
 	\includegraphics[scale=0.425]{topic3.png}

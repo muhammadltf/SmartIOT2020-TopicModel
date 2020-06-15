@@ -199,7 +199,7 @@
 
 % *** SPECIALIZED LIST PACKAGES ***
 %
-\usepackage{algorithmic}
+\usepackage[noend]{algorithmic}
 \usepackage{algorithm}
 % algorithmic.sty was written by Peter Williams and Rogerio Brito.
 % This package provides an algorithmic environment fo describing algorithms.
@@ -426,7 +426,7 @@ Kitakyushu, Japan 808-0135\\\IEEEauthorrefmark{1}muhammad.luthfi@akane.waseda.jp
 
 
 \begin{abstract}
-Analyzing discussion activities to find any latent opinions and hidden patterns is an important problem to improve consensus building process. Several approaches have been proposed in forms of instructions and frameworks such as causal model of Consensus Building Theory (CBT) and short-term intensive workshop in strategy planning phase of Product Lifecycle Management (PLM) process. This paper will analyse a new approach to improve consensus building process by summarizing discussion activity. The proposed method is done by performing data augmentation and topic modeling with the help of background knowledge on discussion activity held within industrial engineering context. Our method produces a complete summarization of discussion activity that consists of topic distribution and distribution similarity between topics. We also found that the usage of data augmentation will improve topic quality. We validate our findings to a professional consultant and conclude that our approach gives an adequate contribution towards summarizing discussion activity that might improve consensus building process.
+Analyzing discussion activities to find any latent opinions and hidden patterns is an important problem to improve consensus building process. Several approaches have been proposed in forms of instructions and frameworks such as causal model of Consensus Building Theory (CBT) and short-term intensive workshop in strategy planning phase of Product Lifecycle Management (PLM) process. Consensus building process plays a significant role in digital transformation that heavily relied on the implementation of Internet of Things (IoT) and PLM. This paper will analyse a new approach to improve consensus building process by summarizing discussion activity. The proposed method is done by performing data augmentation and topic modeling with the help of background knowledge on discussion activity held within industrial engineering context. Our method produces a complete summarization of discussion activity that consists of topic distribution and distribution similarity between topics. We also found that the usage of data augmentation and background knowledge will improve topic quality. We validate our findings to a professional consultant and conclude that our approach gives an adequate contribution towards summarizing discussion activity that might improve consensus building process.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -449,9 +449,13 @@ topic model; background knowledge; consensus building; product lifecycle managem
 
 \section{Introduction}
 % no \IEEEPARstart
-A conventional discussion activity happened when a group of people let out their own opinion with appropriate feedbacks from the other. In industries, discussions are being held in various departments to solve specific problems. We can characterize such discussions as a group of people who shares a same interest aimed to build one single consensus. Furthermore, consensus building is important because it can resolve dispute more effectively by involving people from various levels and departments in an organization\cite{b1}. Nowadays, most companies are using consensus building approach on the requirement decision part of their products, hence making such activities as a specific-themed discussion activity. The practice of consensus building often still have frequent problems. During discussion activities, various stakeholders with different personalities and backgrounds are present might influence conclusion\cite{b2} which will affect tendency and direction of the discussion\cite{b3}.
+A conventional discussion activity happened when a group of people let out their own opinion with appropriate feedbacks from the other. In industries, discussions are being held in various departments to solve specific problems. We can characterize such discussions as a group of people who shares a same interest aimed to build one single consensus.
  
 Some important features of consensus building process are recording, facilitation, and mediation\cite{b1}. Recording in this term stands for creating a physical record of what subject being discussed. Recording can be implemented by recording the whole discussion as a video file or even as simple as taking notes on participant's utterance. Facilitation in a second hand, help participants work together by providing artefact containing the discussion progress which everyone agrees on. Finally, mediation acts to help opposite parties deal with disagreement. In order to perform mediation, one independent person is needed to resolve disputes with his/her objective point of view.
+
+Consensus building plays a significant role in strategy planning phase of Product Lifecyle Management (PLM) process\cite{b23}.  Strategy planning phase is involving people from various levels and departments in an organization\cite{b1}, thus justifies the needs of consensus building approach. The practice of consensus building often still have frequent problems. During discussion activities, various stakeholders with different personalities and backgrounds might influence conclusion\cite{b2} which will affect tendency and direction of the discussion\cite{b3}.
+
+Moreover, PLM practice also support manufacturing companies toward digital transformation\cite{b24}. A holistic paradigm of PLM helped companies to change their internal resources e.g. business processes, product data, people, etc. Internet of things (IoT) will also support companies toward digital transformation by generating abundant and beneficial data to improve their products. In this research, we propose a better consensus building approach for PLM process which eventually, together with IoT, will leads to the advancement of digital transformation.
 
 \section{Related Works}
 \label{sec_rp}
@@ -463,7 +467,7 @@ Meanwhile, measurement model focused more on the criteria to determine consensus
 
 \section{Research Problem}
 \label{sec_rp}
-Previous researches discussed on how consensus is being built by considering  a lot of variables e.g. time consumed, participants contributions, and conflict resolution method. In another hand, more variables should be valued more such as the objectivity of the final consensus and the latent opinion from each participant. This paper tries to discover latent opinion from each participant and avoid biased judgment which rarely discussed by previous researches. We proposed a text mining approach by utilizing topic model algorithms and a set of data as Background Knowledge, and calculating the convergence rate among topic distributions. Data augmentation is also added in the process to increase data quality. However, a preliminary study regarding this matter has been conducted\cite{b4} and this research act as the extension of it with approval from the original author.
+Previous researches discussed on how consensus is being built by considering  a lot of variables e.g. time consumed, participants contributions, and conflict resolution method. In another hand, more variables should be valued more such as the objectivity of the final consensus and the latent opinion from each participant. A preliminary study regarding this matter has been conducted\cite{b4} but it risks of having biased judgment which will damage consensus building process. We proposed a better text mining approach by utilizing topic model algorithms, a set of data as Background Knowledge, and calculating the convergence rate among topic distributions. Data augmentation is also added in the process to increase data quality.
 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
@@ -474,7 +478,7 @@ Previous researches discussed on how consensus is being built by considering  a 
 
 \section{Proposed Method}
 \label{sec_pm}
-In this research, we performed a digitized approach of dialog data from PLM-themed discussion activity sessions using data augmentation, topic model with background knowledge, and distribution similarity. First, the data will be prepared by a simple preprocess method and data augmentation. The clean and augmented data will then be experimented by various topic models and hyperparameters, we picked the best configuration and incorporate it into background-knowledge-backed topic model to generate topic distributions. Then, we will calculate the distribution similarity as convergence rate. Finally, a professional consultant will analyse the results to get an objective review. To summarize, we will take dialog data of discussion session and transform it into topic distributions, similarity value, and most frequent words (if necessary) from each discussion session to be validated by a professional consultant.
+In this research, we performed a digitized approach of dialog data from PLM-themed discussion activity sessions using data augmentation, topic model with background knowledge, and distribution similarity. First, the data will be prepared by a simple preprocess method and data augmentation. The clean and augmented data will then be experimented by various topic models and hyperparameters, we picked the best configuration and incorporate it into background-knowledge-backed topic model to generate topic distributions. Then, we will calculate the distribution similarity as convergence rate. Finally, we will compare the effectiveness of our approach to previous research and get a professional consultant to analyse the topic distribution results to have an objective review. To summarize, we will take dialog data of discussion session and transform it into topic distributions, similarity value, and most frequent words (if necessary) from each discussion session to be validated by a professional consultant.
 
 \subsection{Data Augmentation}
 We took a real-life dialog data from discussion sessions which ran for 1-2 hour long. Based on the dataset characteristics in Table~\ref{table 1: dataset characteristics},
@@ -498,45 +502,32 @@ Average Length&4.83&7.84 \\
 the dataset we used is very poor. Compared to the common dataset in topic model research with specialization in short text data, our dataset size is 96.55\% lower in terms of number of documents and 85.96\% lower in terms of corpus size. Hence, we are using data augmentation techniques to improve dataset quality. We expand the Easy Data Augmentation\cite{b7} by adding additional processes: hypernym replacement and hyponym replacement. Hypernym and hyponym of a word is crucial as we thought the topic mixture of a sentence {\it s} should be the same with another sentence {\it s'} who has hypernym/hyponym relation with it.
 
 \subsection{Topic Model with Background Knowledge}
-We tried to mine latent opinion of the dataset  using topic  model with background knowledge. Topic model is an unsupervised learning approach where we could transform documents into document-to-topic distributions and topic-to-word distributions. In topic model point of view, document is a mixture of topic where topic itself is a mixture of word. The most popular method of topic model is Latent Dirichlet Allocation (LDA)\cite{b8}, in which, current topic model researches mostly use LDA as baseline method. In LDA-based topic model, the learning process consists of generation process and sampling process. In generative process, the initial document-to-topic distributions and topic-to-word distributions are generated using hyperparameter $\alpha$ and $\beta$. Then, in the sampling process, distributions are evaluated by recalculating it using Gibbs Sampling for each word. The graphical notation of LDA topic model is shown in Fig.~\ref{fig_lda}, while the generation algorithm is:
-\bigskip
+We tried to mine latent opinion of the dataset  using topic  model with background knowledge. Topic model is an unsupervised learning approach where we could transform documents into document-to-topic distributions and topic-to-word distributions. In topic model point of view, document is a mixture of topic where topic itself is a mixture of word. The most popular method of topic model is Latent Dirichlet Allocation (LDA)\cite{b8}, in which, current topic model researches mostly use LDA as baseline method. In LDA-based topic model, the learning process consists of generation process and sampling process. In generative process, the initial document-to-topic distributions and topic-to-word distributions are generated using hyperparameter $\alpha$ and $\beta$. Then, in the sampling process, distributions are evaluated by recalculating it using Gibbs Sampling for each word. The graphical notation of LDA topic model is shown in Fig.~\ref{fig_lda}. Meanwhile, the generation algorithm is shown in Algorithm~\ref{alg:lda} where {\it K} is number of topics, {\it D} is number of documents, $N_d$ is number of words in document $d$, $\phi_k$ is topic-to-word distribution for topic {\it k}, $\theta_d$ is document-to-topic distribution for document {\it d}, $z_{id}$ is topic for the $i_{th}$ word in document {\it d}, and $w_{id}$ is the $i_{th}$ word in document {\it d}.
 
 %\begin{algorithm}[H]
-%\begin{algorithm*}
-%\caption{ASGP Merge and Pruning Step}
-%\label{alg:stuff}
-%\begin{algorithmic}[1]
-%\REQUIRE {$stuff$}
-%\STATE $stuff$
-%\RETURN $stuff$
-%\end{algorithmic}
-%\end{algorithm}
-%\end{algorithm*}
-
+\begin{algorithm}[b]
+\caption{Generation Algorithm of LDA}
+\label{alg:lda}
 \begin{algorithmic}[1]
-\STATE For each topic $k \in \{1,...,K\}$:
-\begin{ALC@g} 
+\FOR{$k \in \{1,...,K\}$} 
 \STATE Generate $\phi_k$ \texttildelow{} Dir($\beta$) 
-\end{ALC@g}
-\STATE For each document $d \in \{1,...,D\}$:
-\begin{ALC@g} 
+\ENDFOR
+\FOR{$d \in \{1,...,D\}$}
 \STATE Generate $\theta_d$ \texttildelow{} Dir($\alpha$) 
-\end{ALC@g}
-\STATE For each $i,d$ where $d \in \{1,...,D\}$ and $i \in \{1,...,N_d\}$:
-\begin{ALC@g} 
+\ENDFOR
+\FOR{$i,d$ where $d \in \{1,...,D\}$ and $i \in \{1,...,N_d\}$}
 \STATE Generate $z_{id}$ \texttildelow{} Multinomial($\theta_d$)
 \STATE Generate $w_{id}$ \texttildelow{} Multinomial($\phi_{z_{id}}$)
-\end{ALC@g}
+\ENDFOR
 \end{algorithmic}
-\bigskip
+%\end{algorithm}
+\end{algorithm}
 
-\begin{figure}[b]
+\begin{figure}[h]
 	\includegraphics[scale=0.5]{lda.png}
 	\caption{LDA plate notation}
 \label{fig_lda}
 \end{figure}
-
-\noindent where {\it K} is number of topics, {\it D} is number of documents, $N_d$ is number of words in document $d$, $\phi_k$ is topic-to-word distribution for topic {\it k}, $\theta_d$ is document-to-topic distribution for document {\it d}, $z_{id}$ is topic for the $i_{th}$ word in document {\it d}, and $w_{id}$ is the $i_{th}$ word in document {\it d}.
 
 We mentioned in previous paragraph that our dataset has relatively smaller size compared to common topic model researches. Hence, we assembled various topic models with specialty in short text as suggested by\cite{b6}. The whole list of topic models could be seen in Table~\ref{table 2: topic model experiment} that could be categorized into 4 types. The first type is standard, referred to the baseline topic model which is LDA. The second type, one-topic sampling based, will modify the inference process to sample only one topic per document, meaning all words from a single document will only have one topic label. The third type, global word co-occurrence based, will modify document representation into word-network or set of biterms. Self-aggregation based as the last type will merge several documents into one single pseudo-document and then apply standard-type topic model to it. 
 
@@ -639,12 +630,16 @@ Fig.~\ref{fig_tme2}
 	\caption{Topic coherence value based on background knowledge (BK) augmentation process}
 \label{fig_tme2}
 \end{figure}
-shows the topic coherence value relative to the number of sentence augmentation process applied to background knowledge dataset. The topic coherence value is increasing proportionally with the number of sentence augmentation. We only used LDA algorithm because it is the best configuration we conclude from previous paragraph. The usage of sentence augmentation on background knowledge improves topic coherence up to 3.25\%. We picked 12 sentence augmentation process on background knowledge as the best configuration. In addition, the usage of background knowledge also improves the topic coherence value from 1.307 (LDA without background knowledge) to 1.311 (LDA with background knowledge).
+shows the topic coherence value relative to the number of sentence augmentation process applied to background knowledge dataset. The topic coherence value is increasing proportionally with the number of sentence augmentation. We only used LDA algorithm because it is the best configuration we conclude from previous paragraph. The usage of sentence augmentation on background knowledge improves topic coherence up to 3.25\%. We picked 12 sentence augmentation process on background knowledge as the best configuration.
 
-The final best configuration we found is by using LDA topic model, $\alpha$ value of 0.15, $\beta$ value of 0.01, 2000 iteration, 1 sentence augmentation on dialog dataset, and 12 sentence augmentation on background knowledge.
+The final best configuration we found is by using LDA topic model, $\alpha$ value of 0.15, $\beta$ value of 0.01, 2000 iteration, 1 sentence augmentation on dialog dataset, and 12 sentence augmentation on background knowledge. We are planning to use this finding in future experiment.
 
 \section{Results and Discussion}
-In this section, we applied the best configuration stated in Section~\ref{sec_exp} to create topic distributions of the dataset. Then, we calculate the convergence rate among topic distributions and do qualitative evaluation together with external facilitator. 
+In this section, we compared our findings with previous research\cite{b4} as shown in [FIGURE]. We compared between both approaches using topic coherence value with the same dataset and same number of topics. We conclude that the usage of data augmentation and background knowledge will gives a better result.
+
+
+
+Furthermore, we applied the best configuration stated in Section~\ref{sec_exp} to create topic distributions of the dataset. Then, we calculate the convergence rate among topic distributions and do qualitative evaluation together with external facilitator. 
 
 During topic modeling process, we replaced background knowledge's topic name with its topic number to increase readability. The mapping of topic number with its actual name can be seen at Table~\ref{table 5: mapping plm} with a side note that the order of topic number is in alphabetical order and different with what shown in the reference (PTC Value Roadmap). There are 26 PLM Topics in total that serves as best practice for a specific business unit.
 
@@ -799,11 +794,9 @@ Company 4&0.753&\{Information, Data, Sharing\} \\
 Based on our analysis and feedback from professional consultant. We feel that our experiment on the usage of topic model with background knowledge in an industrial engineering discussion activity (in this case, PLM-themed) gives an actual contribution towards discussion summarization in which, might improve consensus building process. The important takeaway of this  research is that topic modeling with background knowledge will assist professional consultant to understand more towards participant's latent opinion.
 
 \section{Conclusion and Future Works}
-In this paper, we analysed a new digitized approach to improve consensus building process in discussion activity held within industrial engineering context (PLM-themed). Our proposed method consists of performing data augmentation, implementing topic model with background knowledge, and calculating the distribution similarity. Finally, we validate the result on professional consultant. We received good feedback which validates our purpose of using a new approach to improve consensus building process. Moreover, we also found that using data augmentation in topic modeling will improve its topic quality.
+In this paper, we analysed a new digitized approach to improve consensus building process in discussion activity held within industrial engineering context (PLM-themed). Our proposed method consists of performing data augmentation, implementing topic model with background knowledge, and calculating the distribution similarity. Finally, we validate the result on professional consultant. We received good feedback which validates our purpose of using a new approach to improve consensus building process. Moreover, we also found that using data augmentation and background knowledge in topic modeling will improve its topic quality.
 
 However, further approach is still necessary based on two perspective: consensus building and topic modeling. From consensus building perspective, we still need to assure the emotional state of discussion participants when dialog data is recorded. Some variables might aspect the quality and consistency of participant's opinion. Meanwhile from topic modeling perspective, we are planning to expand Source-LDA so it can afford different data representation like BTM and WNTM does.
-
-We also provide a future research direction to accommodate novel ideas of discussion summarization through Internet of Things (IoT) devices. Some examples are but not limited to using our method to process dialog data on-the-fly during discussion process, and automatically providing background knowledge data based on participant's utterances.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -902,14 +895,20 @@ We also provide a future research direction to accommodate novel ideas of discus
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
   
-\bibitem{b1} J.~Thomas-Lamar, S.~Mckearnan, and L.~Susskind, \emph{The Consensus Building Handbook: A Comprehensive Guide to Reaching Agreement}. \hskip 1em plus
+\bibitem{b1} J.~Thomas-Lamar, S.~Mckearnan, and L.~Susskind, \emph{The consensus building handbook: a comprehensive guide to reaching agreement}. \hskip 1em plus
   0.5em minus 0.4em\relax SAGE Publications, 1999. pp. 7--9.
-  
+ 
+\bibitem{b23} J.~Stark, \emph{Product lifecycle management}. \hskip 1em plus
+ 0.5em minus 0.4em \relax Springer, 2015.
+ 
 \bibitem{b2} N.~He, S.~Yao, and O.~Yoshie, \emph{Emotional speech classification in consensus building}. \hskip 1em plus
   0.5em minus 0.4em\relax 2014 10th International Conference on Communications (COMM), Bucharest, 2014, pp. 1-4.
   
 \bibitem{b3} S.~Goto, O.~Yoshie, and S.~Fujimura, \emph{Preliminary Study: Text mining approach to dialog data of stakeholders on requirement decision for Enterprise Information System}. \hskip 1em plus
   0.5em minus 0.4em\relax 2019 10th Annual European Decision Sciences Institute (EDSI) Conference, Nottingham, 2019.
+
+\bibitem{b24} C.~H. Matt and A.~Benlian, \emph{Digital transformation strategies}. \hskip 1em plus
+  0.5em minus 0.4em\relax Business \& Information Systems Engineering Vol. 57, 2015, pp. 339-343.
 
 \bibitem{b4} S.~Goto, O.~Yoshie, and S.~Fujimura, \emph{Empirical study of multi-party workshop facilitation in strategy planning phase for Product Lifecycle Management (PLM) system}. \hskip 1em plus
   0.5em minus 0.4em\relax 2019 International Federation for Information Processing (IFIP) International Conference on Product Lifecycle Management, Moscow, 2019, pp. 82-93.
@@ -917,13 +916,13 @@ We also provide a future research direction to accommodate novel ideas of discus
 \bibitem{b5} Y.~Katagiri et al., \emph{Implicit proposal filtering in multi-party consensus-building conversations}. \hskip 1em plus
   0.5em minus 0.4em\relax Proceedings of the 9th SIGdial Workshop on Discourse and Dialogue, Columbus, 2008, pp. 100-103.
 
-\bibitem{b20} C.~T. L. Butler and A.~Rothstein, \emph{On conflict and consesus; A handbook on formal consesus decision making}. \hskip 1em plus
+\bibitem{b20} C.~T. L. Butler and A.~Rothstein, \emph{On conflict and consensus; A handbook on formal consesus decision making}. \hskip 1em plus
   0.5em minus 0.4em\relax Food Not Bombs Publishing, Takoma Park, 2004.
 
 \bibitem{b21} R.~O. Briggs, G.~Kolfschoten, and G.~J. de Vreede, \emph{Toward a theoretical model of consensus building}. \hskip 1em plus
   0.5em minus 0.4em\relax  11th Americas Conference on Information Systems, 2005.
 
-\bibitem{b22} M.~M. Shepherd and W.~B. Martz Jr, \emph{Group consensus: Do we know it when we see it?}. \hskip 1em plus
+\bibitem{b22} M.~M. Shepherd and W.~B. Martz Jr, \emph{Group consensus: Do we know it when we see it?} \hskip 1em plus
   0.5em minus 0.4em\relax Proceedings of the Hawaii International Conference on System Science, Los Alamitos, 2004.
 
 \bibitem{b6} J.~Qiang, Z.~Qian, Y.~Li, Y.~Yuan, and X.~Wu, \emph{Short text topic modeling techniques, applications, and performance: a survey}. \hskip 1em plus
@@ -932,8 +931,8 @@ We also provide a future research direction to accommodate novel ideas of discus
 \bibitem{b7} J.~Wei and K.~Zou, \emph{EDA: Easy Data Augmentation techniques for boosting performance on text classification tasks}. \hskip 1em plus
   0.5em minus 0.4em\relax Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), Hong Kong, 2019, pp. 6383-6389.
 
-\bibitem{b8} D.~M. Blei, A.~Y. Ng, and M.~I. Jordan, \emph{Latent Dirichlet Allocation}, {\it Proceedings of the 14th International Conference on Neural Information Processing Systems: Natural and Synthetic}. \hskip 1em plus
-  0.5em minus 0.4em\relax Vancouver, 2001, pp. 601-608.
+\bibitem{b8} D.~M. Blei, A.~Y. Ng, and M.~I. Jordan, \emph{Latent Dirichlet Allocation}.\hskip 1em plus
+  0.5em minus 0.4em\relax Proceedings of the 14th International Conference on Neural Information Processing Systems: Natural and Synthetic, Vancouver, 2001, pp. 601-608.
 
 \bibitem{b9} J.~Wood, P.~Tan, W.~Wang, and C.~Arnold, \emph{Source-LDA: Enhancing probabilistic topic models using prior knowledge sources}. \hskip 1em plus
   0.5em minus 0.4em\relax 33rd IEEE International Conference on Data Engineering (ICDE), San Diego, 2017, pp. 411-422. 
@@ -953,8 +952,8 @@ We also provide a future research direction to accommodate novel ideas of discus
 \bibitem{b14} C.~Li et al., \emph{Enhancing topic modeling for short texts with auxiliary word embeddings}. \hskip 1em plus
   0.5em minus 0.4em\relax ACM Transactions on Information Systems (TOIS), 2017, pp. 1-30.
 
-\bibitem{b15} X.~Cheng, X.~Yan, Y.~Lan, and J.~Guo, \emph{Btm: Topic modeling over short texts}, {\it IEEE Transactions on Knowledge and Data Engineering}. \hskip 1em plus
-  0.5em minus 0.4em\relax 2014, pp. 2928-2941.
+\bibitem{b15} X.~Cheng, X.~Yan, Y.~Lan, and J.~Guo, \emph{Btm: Topic modeling over short texts}. \hskip 1em plus
+  0.5em minus 0.4em\relax IEEE Transactions on Knowledge and Data Engineering, 2014, pp. 2928-2941.
 
 \bibitem{b16} Y.~Zuo, J.~Zhao, and K.~Xu, \emph{Word network topic model: a simple but general solution for short and imbalanced texts}. \hskip 1em plus
   0.5em minus 0.4em\relax Knowledge and Information Systems, 2016, pp. 379-398.

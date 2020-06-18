@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.25)  8 JUN 2020 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.25)  18 JUN 2020 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -322,94 +322,97 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks23
 \c@algorithm=\count109
 )
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen129
+\extrarowheight=\dimen130
+\NC@list=\toks24
+\extratabsurround=\skip51
+\backup@length=\skip52
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen129
-\captionmargin@=\dimen130
-\captionwidth=\dimen131
-\caption@tempdima=\dimen132
-\caption@indent=\dimen133
-\caption@parindent=\dimen134
-\caption@hangindent=\dimen135
+\captionmargin=\dimen131
+\captionmargin@=\dimen132
+\captionwidth=\dimen133
+\caption@tempdima=\dimen134
+\caption@indent=\dimen135
+\caption@parindent=\dimen136
+\caption@hangindent=\dimen137
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 )
-
-Package caption Warning: Unsupported document class (or package) detected,
-(caption)                usage of the caption package is not recommended.
-See the caption package documentation for explanation.
-
-Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
-blestring \footnotesize \begin {center}{\normalfont \footnotesize #1}\\{\normal
-font \footnotesize \scshape #2}\end {center}\@IEEEtablecaptionsepspace \else \@
-IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {
-#1.}~~ #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \
-footnotesize {#1.}~~ }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent 
-\unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfon
-t \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont 
-\footnotesize \box \@tempboxa \hfil }\fi \fi \fi .
-\c@ContinuedFloat=\count110
-Package caption Info: float package is loaded.
-) (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
-Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count111
-\sf@farskip=\skip51
-\sf@captopadj=\dimen136
-\sf@capskip=\skip52
-\sf@nearskip=\skip53
-\c@subfigure=\count112
-\c@subfigure@save=\count113
-\c@lofdepth=\count114
-\c@subtable=\count115
-\c@subtable@save=\count116
-\c@lotdepth=\count117
-\sf@top=\skip54
-\sf@bottom=\skip55
+\c@KVtest=\count110
+\sf@farskip=\skip53
+\sf@captopadj=\dimen138
+\sf@capskip=\skip54
+\sf@nearskip=\skip55
+\c@subfigure=\count111
+\c@subfigure@save=\count112
+\c@lofdepth=\count113
+\c@subtable=\count114
+\c@subtable@save=\count115
+\c@lotdepth=\count116
+\sf@top=\skip56
+\sf@bottom=\skip57
 )
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
+Applying: [2015/01/01] Old fixltx2e package on input line 46.
+
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+Already applied: [0000/00/00] Old fixltx2e package on input line 53.
+) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (./bare_conf.aux)
+) (./bare_conf.aux
+
+LaTeX Warning: Label `sec_rp' multiply defined.
+
+)
 \openout1 = `bare_conf.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 368.
-LaTeX Font Info:    ... okay on input line 368.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 368.
-LaTeX Font Info:    ... okay on input line 368.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 368.
-LaTeX Font Info:    ... okay on input line 368.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 368.
-LaTeX Font Info:    ... okay on input line 368.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 368.
-LaTeX Font Info:    ... okay on input line 368.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 368.
-LaTeX Font Info:    ... okay on input line 368.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 368.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 368.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 369.
+LaTeX Font Info:    ... okay on input line 369.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 369.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 369.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 368.
+LaTeX Font Info:    ... okay on input line 369.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen137
+\scratchcounter=\count117
+\scratchdimen=\dimen139
 \scratchbox=\box31
-\nofMPsegments=\count119
-\nofMParguments=\count120
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen138
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks25
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen140
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -469,13 +472,13 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 424.
-LaTeX Font Info:    Try loading font information for U+msa on input line 424.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 425.
+LaTeX Font Info:    Try loading font information for U+msa on input line 425.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 424.
+LaTeX Font Info:    Try loading font information for U+msb on input line 425.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -483,106 +486,139 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 480.
+<../lda.png, id=11, 451.6875pt x 222.8325pt>
+File: ../lda.png Graphic file (type png)
+<use ../lda.png>
+Package pdftex.def Info: ../lda.png  used on input line 506.
+(pdftex.def)             Requested size: 225.84319pt x 111.41597pt.
+ [2 <../lda.png>]
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 517.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (5.17528pt too wide) in paragraph at lines 496--508
-[][]
- []
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 601.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../lda.png, id=11, 451.6875pt x 222.8325pt>
-File: ../lda.png Graphic file (type png)
-<use ../lda.png>
-Package pdftex.def Info: ../lda.png  used on input line 511.
-(pdftex.def)             Requested size: 225.84319pt x 111.41597pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (9.03015pt too wide) in paragraph at lines 522--542
-[][]
- []
-
-[2 <../lda.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 556--556
-[][][]$\OT1/ptm/m/n/8 http : / / support . ptc . com / WCMS / ^^Lles / 28837 / 
-en / J1051[]ValueRoadmap[]
- []
-
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 594.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 594.
-<../topic1.png, id=20, 602.25pt x 372.39125pt>
-File: ../topic1.png Graphic file (type png)
-<use ../topic1.png>
-Package pdftex.def Info: ../topic1.png  used on input line 599.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 601.
+ [3]
+<../new-topic1.pdf, id=25, 602.25pt x 372.39125pt>
+File: ../new-topic1.pdf Graphic file (type pdf)
+<use ../new-topic1.pdf>
+Package pdftex.def Info: ../new-topic1.pdf  used on input line 615.
 (pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
 
-Overfull \hbox (12.0462pt too wide) in paragraph at lines 599--600
+Overfull \hbox (12.0462pt too wide) in paragraph at lines 615--616
 [][] 
  []
 
-<../topic2.png, id=21, 602.25pt x 372.39125pt>
-File: ../topic2.png Graphic file (type png)
-<use ../topic2.png>
-Package pdftex.def Info: ../topic2.png  used on input line 605.
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--620
+[][][]$\OT1/ptm/m/n/8 http : / / support . ptc . com / WCMS / ^^Lles / 28837 / 
+en / J1051[]ValueRoadmap[]
+ []
+
+<../new-topic2.pdf, id=26, 602.25pt x 372.39125pt>
+File: ../new-topic2.pdf Graphic file (type pdf)
+<use ../new-topic2.pdf>
+Package pdftex.def Info: ../new-topic2.pdf  used on input line 624.
 (pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
 
-Overfull \hbox (12.0462pt too wide) in paragraph at lines 605--606
+Overfull \hbox (12.0462pt too wide) in paragraph at lines 624--625
 [][] 
  []
 
-<../company1.png, id=22, 602.25pt x 372.39125pt>
-File: ../company1.png Graphic file (type png)
-<use ../company1.png>
-Package pdftex.def Info: ../company1.png  used on input line 616.
-(pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
-<../company2.png, id=23, 602.25pt x 372.39125pt>
-File: ../company2.png Graphic file (type png)
-<use ../company2.png>
-Package pdftex.def Info: ../company2.png  used on input line 617.
-(pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
-<../company3.png, id=24, 602.25pt x 372.39125pt>
-File: ../company3.png Graphic file (type png)
-<use ../company3.png>
-Package pdftex.def Info: ../company3.png  used on input line 618.
-(pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
-<../company4.png, id=25, 602.25pt x 372.39125pt>
-File: ../company4.png Graphic file (type png)
-<use ../company4.png>
-Package pdftex.def Info: ../company4.png  used on input line 619.
+<../new-topic3.pdf, id=27, 602.25pt x 372.39125pt>
+File: ../new-topic3.pdf Graphic file (type pdf)
+<use ../new-topic3.pdf>
+Package pdftex.def Info: ../new-topic3.pdf  used on input line 636.
 (pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
 
-Overfull \hbox (6.02492pt too wide) in paragraph at lines 616--620
+Overfull \hbox (12.0462pt too wide) in paragraph at lines 636--637
+[][] 
+ []
+
+[4 <../new-topic1.pdf> <../new-topic2.pdf
+
+pdfTeX warning: pdflatex (file ../new-topic2.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+> <../new-topic3.pdf
+
+pdfTeX warning: pdflatex (file ../new-topic3.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+>]
+<../new-company1.pdf, id=73, 602.25pt x 372.39125pt>
+File: ../new-company1.pdf Graphic file (type pdf)
+<use ../new-company1.pdf>
+Package pdftex.def Info: ../new-company1.pdf  used on input line 646.
+(pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
+<../new-company2.pdf, id=74, 602.25pt x 372.39125pt>
+File: ../new-company2.pdf Graphic file (type pdf)
+<use ../new-company2.pdf>
+Package pdftex.def Info: ../new-company2.pdf  used on input line 647.
+(pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
+<../new-company3.pdf, id=75, 602.25pt x 372.39125pt>
+File: ../new-company3.pdf Graphic file (type pdf)
+<use ../new-company3.pdf>
+Package pdftex.def Info: ../new-company3.pdf  used on input line 648.
+(pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
+<../new-company4.pdf, id=76, 602.25pt x 372.39125pt>
+File: ../new-company4.pdf Graphic file (type pdf)
+<use ../new-company4.pdf>
+Package pdftex.def Info: ../new-company4.pdf  used on input line 649.
+(pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
+
+Overfull \hbox (6.02492pt too wide) in paragraph at lines 646--650
 [][][] 
  []
 
 
-Overfull \hbox (6.02492pt too wide) in paragraph at lines 616--620
+Overfull \hbox (6.02492pt too wide) in paragraph at lines 646--650
 [][] 
  []
 
-[3] [4 <../topic1.png> <../topic2.png>] [5 <../company1.png> <../company2.png> 
-<../company3.png> <../company4.png>]
-<../topic3.png, id=41, 602.25pt x 372.39125pt>
+
+Overfull \hbox (1.44075pt too wide) in paragraph at lines 756--769
+ [][] 
+ []
+
+[5]
+Underfull \vbox (badness 5388) has occurred while \output is active []
+
+
+Underfull \vbox (badness 5388) has occurred while \output is active []
+
+ [6 <../new-company1.pdf> <../new-company2.pdf
+
+pdfTeX warning: pdflatex (file ../new-company2.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+> <../new-company3.pdf
+
+pdfTeX warning: pdflatex (file ../new-company3.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+> <../new-company4.pdf
+
+pdfTeX warning: pdflatex (file ../new-company4.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>] [7]
+<../topic3.png, id=152, 602.25pt x 372.39125pt>
 File: ../topic3.png Graphic file (type png)
 <use ../topic3.png>
-Package pdftex.def Info: ../topic3.png  used on input line 910.
+Package pdftex.def Info: ../topic3.png  used on input line 973.
 (pdftex.def)             Requested size: 255.95746pt x 158.26703pt.
 
-Overfull \hbox (12.0462pt too wide) in paragraph at lines 910--911
+Overfull \hbox (12.0462pt too wide) in paragraph at lines 973--974
 [][] 
  []
+
+
+Underfull \vbox (badness 5771) has occurred while \output is active []
+
 
 
 ** Conference Paper **
@@ -595,28 +631,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6 <../topic3.png>] (./bare_conf.aux) ) 
+[8 <../topic3.png>] (./bare_conf.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5779 strings out of 492982
- 86162 string characters out of 6134896
- 167038 words of memory out of 5000000
- 9236 multiletter control sequences out of 15000+600000
- 43574 words of font info for 89 fonts, out of 8000000 for 9000
+ 5385 strings out of 492982
+ 79252 string characters out of 6134896
+ 153576 words of memory out of 5000000
+ 8835 multiletter control sequences out of 15000+600000
+ 46405 words of font info for 92 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,15n,49p,1222b,362s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc
-/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on bare_conf.pdf (6 pages, 202959 bytes).
+ 41i,16n,49p,1371b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bare_conf.pdf (8 pages, 285656 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 192 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
